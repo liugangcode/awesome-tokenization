@@ -4,11 +4,11 @@
 
 The collection tracks methods that form, select, merge, quantize, parse, or study model units/tokens. It separates the tokenizer from the foundation model that consumes its output. 
 
-The current release contains 322 literature records and 78 frontier-lab or public-model profiles. 
+The current release contains 322 literature records and 78 frontier-lab or public models. 
 
 <!-- Cutoff: September 6, 2026. -->
 
-## Contents
+## Contents ([Interactive Explorer](https://liugangcode.github.io/awesome-tokenization))
 
 - [0. Cross-Cutting Foundations, Surveys, and Evaluation](#0-cross-cutting-foundations-surveys-and-evaluation)
 - [1.1 Text and Code](#11-text-and-code)
