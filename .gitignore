@@ -1,0 +1,5 @@
+# Keep only the public collection Markdown files under version control.
+*.md
+!README.md
+*.bib
+data
