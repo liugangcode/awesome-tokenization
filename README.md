@@ -8,25 +8,26 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 
 <!-- Cutoff: September 6, 2026. -->
 
-
-## [Interactive Explorer](https://liugangcode.github.io/awesome-tokenization/)
-
 ## Contents
 
 - [0. Cross-Cutting Foundations, Surveys, and Evaluation](#0-cross-cutting-foundations-surveys-and-evaluation)
 - [1.1 Text and Code](#11-text-and-code)
 - [1.2 Images and Video](#12-images-and-video)
 - [1.3 Audio and Speech](#13-audio-and-speech)
-- [1.4 Graphs, Tables, and Recommendation](#14-graphs-tables-and-recommendation)
-- [1.5 Time Series, Physical Fields, and World Models](#15-time-series-physical-fields-and-world-models)
-- [1.6 Multimodal Interfaces](#16-multimodal-interfaces)
+- [1.4 Point Clouds and Three-Dimensional Structure](#14-point-clouds-and-three-dimensional-structure)
+- [1.5 Graphs and Tables](#15-graphs-and-tables)
+- [1.6 Time Series, Physical Fields, and Latent World States](#16-time-series-physical-fields-and-latent-world-states)
+- [1.7 Robot Actions and Embodied Trajectory](#17-robot-actions-and-embodied-trajectory)
+- [1.8 Multimodal Token Systems](#18-multimodal-token-systems)
 - [2.1 DNA and RNA](#21-dna-and-rna)
 - [2.2 Proteins and Peptides](#22-proteins-and-peptides)
 - [2.3 Molecules and Reactions](#23-molecules-and-reactions)
 - [2.4 Crystals, Materials, and Polymers](#24-crystals-materials-and-polymers)
-- [2.5 Spectra and Microscopy](#25-spectra-and-microscopy)
-- [2.6 Omics and Cells](#26-omics-and-cells)
-- [2.7 Physical Fields and Simulations](#27-physical-fields-and-simulations)
+- [2.5 Spectra and Microscopy](#25-spectra)
+- [2.6 Medical Imaging and Digital Pathology](#26-medical-imaging-and-digital-pathology)
+- [2.7 Omics and Cells](#27-omics-and-cells)
+- [2.8 Physical Fields and Simulations](#28-physical-fields-and-simulations)
+- [2.9 Earth System Observations](#29-earth-system-observations)
 - [3. Theoretical and Method Foundations for Future Tokenizers](#3-theoretical-and-method-foundations-for-future-tokenizers)
 - [Contributing](#contributing)
 
@@ -47,8 +48,8 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2000\. N. Jesper Larsson and Alistair Moffat. [Off-line Dictionary-Based Compression](https://doi.org/10.1109/5.892708). *Proceedings of the IEEE*.
 - 2016\. E. Jang, S. Gu, et al. [Categorical reparameterization with gumbel-softmax](https://arxiv.org/abs/1611.01144). *arXiv:1611.01144*.
 - 2017\. A. V. D. Oord, O. Vinyals, et al. [Neural discrete representation learning](https://arxiv.org/abs/1711.00937). *NeurIPS*.
-- 2021\. Sabrina J. Mielke et al. [Between Words and Characters: A Brief History of Open-Vocabulary Modeling and Tokenization in NLP](https://arxiv.org/abs/2112.10508). *arXiv preprint arXiv:2112.10508*.
 - 2021\. Rishi Bommasani et al. [On the Opportunities and Risks of Foundation Models](https://arxiv.org/abs/2108.07258). *arXiv preprint arXiv:2108.07258*.
+- 2021\. Sabrina J. Mielke et al. [Between Words and Characters: A Brief History of Open-Vocabulary Modeling and Tokenization in NLP](https://arxiv.org/abs/2112.10508). *arXiv preprint arXiv:2112.10508*.
 - 2025\. Juan Luis Gastaldi, John Terilla, Luca Malagutti, Brian DuSell, Tim Vieira, and Ryan Cotterell. [The Foundations of Tokenization: Statistical and Computational Concerns](https://arxiv.org/abs/2407.11606). *International Conference on Learning Representations*.
 - 2025\. Marco Cognetta and Naoaki Okazaki. [Tokenization as Finite-State Transduction](https://aclanthology.org/2025.cl-4.2/). *Computational Linguistics*.
 - 2026\. Mohammad Mahdi Azizi, Bagher BabaAli, Fatemeh Ziaeetabar. [Dynamic Tokenization in the Transformer Era: A Review and Taxonomy](https://doi.org/10.1016/j.patcog.2026.114439). *Pattern Recognition*.
@@ -132,7 +133,6 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Feng Wang, Yaodong Yu, Wei Shao, Yuyin Zhou, Alan Yuille, and Cihang Xie. [Scaling Laws in Patchification: An Image Is Worth 50,176 Tokens And More](https://proceedings.mlr.press/v267/wang25ed.html). *International Conference on Machine Learning*.
 - 2025\. Huawei Lin, Tong Geng, Zhaozhuo Xu, and Weijie Zhao. [VTBench: Evaluating Visual Tokenizers for Autoregressive Image Generation](https://arxiv.org/abs/2505.13439). *arXiv*.
 - 2025\. Jiaming Han, Hao Chen, Yang Zhao, Hanyu Wang, Qi Zhao, Ziyan Yang, Hao He, Xiangyu Yue, and Lu Jiang. [Vision as a Dialect: Unifying Visual Understanding and Generation via Text-Aligned Representations](https://proceedings.neurips.cc/paper_files/paper/2025/hash/e87b1e06be8c3594c810e8991e77ea40-Abstract-Conference.html). *NeurIPS*.
-- 2025\. Jian Liu et al. [FreeMesh: Boosting Mesh Generation with Coordinates Merging](https://proceedings.mlr.press/v267/liu25bz.html). *International Conference on Machine Learning*.
 - 2025\. Junfeng Wu et al. [TokBench: Evaluating Your Visual Tokenizer before Visual Generation](https://arxiv.org/abs/2505.18142). *arXiv*.
 - 2025\. Junhong Shen et al. [CAT: Content-Adaptive Image Tokenization](https://proceedings.neurips.cc/paper_files/paper/2025/hash/014898b821e3ce966ae1db68cb8d9966-Abstract-Conference.html). *NeurIPS*.
 - 2025\. Kyle Sargent, Kyle Hsu, Justin Johnson, Li Fei-Fei, and Jiajun Wu. [Flow to the Mode: Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](https://openaccess.thecvf.com/content/ICCV2025/html/Sargent_Flow_to_the_Mode_Mode-Seeking_Diffusion_Autoencoders_for_State-of-the-Art_Image_ICCV_2025_paper.html). *ICCV*.
@@ -172,7 +172,12 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Wenrui Liu et al. [Analyzing and Mitigating Inconsistency in Discrete Speech Tokens for Neural Codec Language Models](https://aclanthology.org/2025.acl-long.1498/). *ACL*.
 - 2025\. Yuancheng Wang, Dekun Chen, Xueyao Zhang, Junan Zhang, Jiaqi Li, and Zhizheng Wu. [TaDiCodec: Text-Aware Diffusion Speech Tokenizer for Speech Language Modeling](https://proceedings.neurips.cc/paper_files/paper/2025/hash/d8a12fde9e72444e1b356e8c37e53753-Abstract-Conference.html). *NeurIPS*.
 
-## 1.4 Graphs, Tables, and Recommendation
+## 1.4 Point Clouds and Three-Dimensional Structure
+
+- 2022\. Xumin Yu, Lulu Tang, Yongming Rao, Tiejun Huang, Jie Zhou, and Jiwen Lu. [Point-BERT: Pre-Training 3D Point Cloud Transformers With Masked Point Modeling](https://openaccess.thecvf.com/content/CVPR2022/html/Yu_Point-BERT_Pre-Training_3D_Point_Cloud_Transformers_With_Masked_Point_Modeling_CVPR_2022_paper.html). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2025\. Jian Liu et al. [FreeMesh: Boosting Mesh Generation with Coordinates Merging](https://proceedings.mlr.press/v267/liu25bz.html). *International Conference on Machine Learning*.
+
+## 1.5 Graphs and Tables
 
 - 2011\. Nino Shervashidze et al. [Weisfeiler-Lehman Graph Kernels](https://www.jmlr.org/papers/v12/shervashidze11a.html). *Journal of Machine Learning Research*.
 - 2017\. Annamalai Narayanan et al. [graph2vec: Learning Distributed Representations of Graphs](https://arxiv.org/abs/1707.05005). *Mining and Learning with Graphs Workshop*.
@@ -194,23 +199,26 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Zehong Wang, Zheyuan Zhang, Tianyi Ma, Chuxu Zhang, and Yanfang Ye. [Generative Graph Pattern Machine](https://proceedings.neurips.cc/paper_files/paper/2025/file/2b22bacd7ad8677f4837b28a11fe496f-Paper-Conference.pdf). *NeurIPS*.
 - 2026\. Zeyuan Guo, Enmao Diao, Cheng Yang, and Chuan Shi. [Graph Tokenization for Bridging Graphs and Transformers](https://proceedings.iclr.cc/paper_files/paper/2026/hash/2c0781f2ed2d8054d4f27a19bd8c380b-Abstract-Conference.html). *International Conference on Learning Representations*.
 
-## 1.5 Time Series, Physical Fields, and World Models
+## 1.6 Time Series, Physical Fields, and Latent World States
 
 - 2003\. Jessica Lin, Eamonn Keogh, Stefano Lonardi, and Bill Chiu. [A Symbolic Representation of Time Series, with Implications for Streaming Algorithms](https://doi.org/10.1145/882082.882086). *ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery*.
 - 2020\. Danijar Hafner et al. [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193). *ICLR 2021*.
 - 2023\. Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, and Jayant Kalagnanam. [A Time Series Is Worth 64 Words: Long-Term Forecasting with Transformers](https://openreview.net/forum?id=Jbdc0vTOcol). *ICLR*.
 - 2024\. Abdul Fatir Ansari et al. [Chronos: Learning the Language of Time Series](https://arxiv.org/abs/2403.07815). *arXiv preprint arXiv:2403.07815*.
 - 2024\. Abhimanyu Das et al. [A Decoder-Only Foundation Model for Time-Series Forecasting](https://arxiv.org/abs/2310.10688). *arXiv preprint arXiv:2310.10688*.
-- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
-- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
 - 2024\. Mononito Goswami et al. [MOMENT: A Family of Open Time-Series Foundation Models](https://proceedings.mlr.press/v235/goswami24a.html). *ICML*.
 - 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
+- 2025\. Luca Masserano et al. [Enhancing Foundation Models for Time Series Forecasting via Wavelet-Based Tokenization](https://proceedings.mlr.press/v267/masserano25a.html). *ICML*.
+
+## 1.7 Robot Actions and Embodied Trajectory
+
+- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
+- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
 - 2024\. Ruijie Zheng, Ching-An Cheng, Hal Daumé III, Furong Huang, and Andrey Kolobov. [PRISE: LLM-Style Sequence Compression for Learning Temporal Action Abstractions in Control](https://proceedings.mlr.press/v235/zheng24b.html). *ICML*.
 - 2025\. Karl Pertsch et al. [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747). *arXiv*.
-- 2025\. Luca Masserano et al. [Enhancing Foundation Models for Time Series Forecasting via Wavelet-Based Tokenization](https://proceedings.mlr.press/v267/masserano25a.html). *ICML*.
 - 2025\. NVIDIA. [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575). *arXiv preprint arXiv:2501.03575*.
 
-## 1.6 Multimodal Interfaces
+## 1.8 Multimodal Token Systems
 
 - 2021\. Andrew Jaegle et al. [Perceiver: General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html). *International Conference on Machine Learning*.
 - 2022\. Jean-Baptiste Alayrac et al. [Flamingo: A Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198). *arXiv preprint arXiv:2204.14198*.
@@ -336,16 +344,19 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 
 ## 2.5 Spectra and Microscopy
 
-- 2021\. Florian Huber et al. [Spec2Vec: Improved Mass Spectral Similarity Scoring through Learning of Structural Relationships](https://doi.org/10.1371/journal.pcbi.1008724). *PLOS Computational Biology*.
 - 2021\. Florian Huber et al. [MS2DeepScore: A Novel Deep Learning Similarity Measure to Compare Tandem Mass Spectra](https://doi.org/10.1186/s13321-021-00558-4). *Journal of Cheminformatics*.
-- 2024\. Richard J. Chen et al. [Towards a General-Purpose Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02857-3). *Nature Medicine*.
-- 2024\. Ming Y. Lu et al. [A Visual-Language Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02856-4). *Nature Medicine*.
+- 2021\. Florian Huber et al. [Spec2Vec: Improved Mass Spectral Similarity Scoring through Learning of Structural Relationships](https://doi.org/10.1371/journal.pcbi.1008724). *PLOS Computational Biology*.
 - 2024\. Melih Yilmaz et al. [Sequence-to-Sequence Translation from Mass Spectra to Peptides with a Transformer Model](https://www.nature.com/articles/s41467-024-49731-x). *Nature Communications*.
-- 2025\. Roman Bushuiev et al. [Self-Supervised Learning of Molecular Representations from Millions of Tandem Mass Spectra Using DreaMS](https://www.nature.com/articles/s41587-025-02663-3). *Nature Biotechnology*.
 - 2025\. Kevin Eloff et al. [InstaNovo Enables Diffusion-Powered de Novo Peptide Sequencing in Large-Scale Proteomics Experiments](https://www.nature.com/articles/s42256-025-01019-5). *Nature Machine Intelligence*.
+- 2025\. Roman Bushuiev et al. [Self-Supervised Learning of Molecular Representations from Millions of Tandem Mass Spectra Using DreaMS](https://www.nature.com/articles/s41587-025-02663-3). *Nature Biotechnology*.
 - 2025\. Yang Xu et al. [A Large Language Model for Deriving Spectral Embeddings for Accurate Compound Identification in Mass Spectrometry](https://www.nature.com/articles/s42004-025-01708-7). *Communications Chemistry*.
 
-## 2.6 Omics and Cells
+## 2.6 Medical Imaging and Digital Pathology
+
+- 2024\. Ming Y. Lu et al. [A Visual-Language Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02856-4). *Nature Medicine*.
+- 2024\. Richard J. Chen et al. [Towards a General-Purpose Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02857-3). *Nature Medicine*.
+
+## 2.7 Omics and Cells
 
 - 2022\. Fan Yang et al. [scBERT as a Large-Scale Pretrained Deep Language Model for Cell Type Annotation of Single-Cell RNA-seq Data](https://doi.org/10.1038/s42256-022-00534-z). *Nature Machine Intelligence*.
 - 2023\. Christina V. Theodoris et al. [Transfer Learning Enables Predictions in Network Biology](https://doi.org/10.1038/s41586-023-06139-9). *Nature*.
@@ -355,27 +366,30 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Seungbeom Kim et al. [Single-Cell Foundation Models: Bringing Artificial Intelligence into Cell Biology](https://doi.org/10.1038/s12276-025-01547-5). *Experimental and Molecular Medicine*.
 - 2026\. Yanay Rosen et al. [Universal Cell Embedding Provides a Foundation Model for Cell Biology](https://doi.org/10.1038/s41586-026-10689-z). *Nature*.
 
-## 2.7 Physical Fields and Simulations
+## 2.8 Physical Fields and Simulations
 
 - 2021\. Michael M. Bronstein, Joan Bruna, Taco Cohen, Petar Velickovic. [Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges](https://arxiv.org/abs/2104.13478). *arXiv preprint arXiv:2104.13478*.
 - 2021\. Tobias Pfaff et al. [Learning Mesh-Based Simulation with Graph Networks](https://openreview.net/forum?id=roNqYL0_XP). *International Conference on Learning Representations*.
-- 2022\. Jaideep Pathak et al. [FourCastNet: A Global Data-Driven High-Resolution Weather Model Using Adaptive Fourier Neural Operators](https://arxiv.org/abs/2202.11214). *arXiv preprint arXiv:2202.11214*.
-- 2022\. Zhihan Gao et al. [Earthformer: Exploring Space-Time Transformers for Earth System Forecasting](https://arxiv.org/abs/2207.05833). *Advances in Neural Information Processing Systems*.
-- 2023\. Kaifeng Bi et al. [Accurate Medium-Range Global Weather Forecasting with 3D Neural Networks](https://doi.org/10.1038/s41586-023-06185-3). *Nature*.
 - 2023\. Nikola Kovachki, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. [Neural Operator: Learning Maps Between Function Spaces With Applications to PDEs](https://www.jmlr.org/papers/v24/21-1524.html). *Journal of Machine Learning Research*.
-- 2023\. Remi Lam et al. [Learning Skillful Medium-Range Global Weather Forecasting](https://doi.org/10.1126/science.adi2336). *Science*.
-- 2023\. Tung Nguyen et al. [ClimaX: A Foundation Model for Weather and Climate](https://proceedings.mlr.press/v202/nguyen23a.html). *International Conference on Machine Learning*.
 - 2024\. Haixu Wu et al. [Transolver: A Fast Transformer Solver for PDEs on General Geometries](https://proceedings.mlr.press/v235/wu24r.html). *International Conference on Machine Learning*.
-- 2024\. Ilan Price et al. [Probabilistic Weather Forecasting with Machine Learning](https://doi.org/10.1038/s41586-024-08252-9). *Nature*.
-- 2024\. Stephan Hoyer et al. [Neural General Circulation Models for Weather and Climate](https://doi.org/10.1038/s41586-024-07744-y). *Nature*.
 - 2025\. Benjamin Holzschuh, Qiang Liu, Georg Kohl, and Nils Thuerey. [PDE-Transformer: Efficient and Versatile Transformers for Physics Simulations](https://proceedings.mlr.press/v267/holzschuh25a.html). *International Conference on Machine Learning*.
-- 2025\. Cristian Bodnar et al. [A Foundation Model for the Earth System](https://www.nature.com/articles/s41586-025-09005-y). *Nature*.
 - 2025\. Palash Bera and Jagannath Mondal. [Accurate Prediction of the Kinetic Sequence of Physicochemical States Using Generative Artificial Intelligence](https://doi.org/10.1039/D5SC00108K). *Chemical Science*.
 - 2025\. Yiqing Shen, Hao Ding, Lalithkumar Seenivasan, Tianmin Shu, and Mathias Unberath. [Position: Foundation Models Need Digital Twin Representations](https://arxiv.org/abs/2505.03798). *arXiv preprint arXiv:2505.03798*.
 
+## 2.9 Earth System Observations
+
+- 2022\. Jaideep Pathak et al. [FourCastNet: A Global Data-Driven High-Resolution Weather Model Using Adaptive Fourier Neural Operators](https://arxiv.org/abs/2202.11214). *arXiv preprint arXiv:2202.11214*.
+- 2022\. Zhihan Gao et al. [Earthformer: Exploring Space-Time Transformers for Earth System Forecasting](https://arxiv.org/abs/2207.05833). *Advances in Neural Information Processing Systems*.
+- 2023\. Kaifeng Bi et al. [Accurate Medium-Range Global Weather Forecasting with 3D Neural Networks](https://doi.org/10.1038/s41586-023-06185-3). *Nature*.
+- 2023\. Remi Lam et al. [Learning Skillful Medium-Range Global Weather Forecasting](https://doi.org/10.1126/science.adi2336). *Science*.
+- 2023\. Tung Nguyen et al. [ClimaX: A Foundation Model for Weather and Climate](https://proceedings.mlr.press/v202/nguyen23a.html). *International Conference on Machine Learning*.
+- 2024\. Ilan Price et al. [Probabilistic Weather Forecasting with Machine Learning](https://doi.org/10.1038/s41586-024-08252-9). *Nature*.
+- 2024\. Stephan Hoyer et al. [Neural General Circulation Models for Weather and Climate](https://doi.org/10.1038/s41586-024-07744-y). *Nature*.
+- 2025\. Cristian Bodnar et al. [A Foundation Model for the Earth System](https://www.nature.com/articles/s41586-025-09005-y). *Nature*.
+
 ## 3. Theoretical and Method Foundations for Future Tokenizers
 
-> This section records papers that define useful criteria for tokenizers and earlier methods that can form units, even when the authors did not use the term *tokenizer*. 
+> This section records papers that define useful criteria for tokenizers and earlier methods that can form units, even when the authors did not use the term *tokenizer*.
 
 - 1949\. Claude E. Shannon. [Communication in the Presence of Noise](https://ieeexplore.ieee.org/document/1697831). *Proceedings of the IRE*.
 - 1959\. Claude E. Shannon. [Coding Theorems for a Discrete Source With a Fidelity Criterion](https://ieeexplore.ieee.org/document/5311476). *IRE National Convention Record*.
@@ -397,10 +411,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2019\. Christopher P. Burgess et al. [MONet: Unsupervised Scene Decomposition and Representation](https://arxiv.org/abs/1901.11390). *arXiv preprint arXiv:1901.11390*.
 - 2019\. Yochai Blau and Tomer Michaeli. [Rethinking Lossy Compression: The Rate-Distortion-Perception Tradeoff](https://proceedings.mlr.press/v97/blau19a.html). *International Conference on Machine Learning*.
 - 2020\. Francesco Locatello et al. [Object-Centric Learning with Slot Attention](https://proceedings.neurips.cc/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html). *Advances in Neural Information Processing Systems*.
-- 2022\. Xumin Yu, Lulu Tang, Yongming Rao, Tiejun Huang, Jie Zhou, and Jiwen Lu. [Point-BERT: Pre-Training 3D Point Cloud Transformers With Masked Point Modeling](https://openaccess.thecvf.com/content/CVPR2022/html/Yu_Point-BERT_Pre-Training_3D_Point_Cloud_Transformers_With_Masked_Point_Modeling_CVPR_2022_paper.html). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
 
 ## Contributing
 
-Corrections and additions are welcome. 
-
-
+Corrections and additions are welcome.
