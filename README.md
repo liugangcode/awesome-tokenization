@@ -2,13 +2,33 @@
 
 <!-- A collection for **What Should Count as a Token?**, a comprehensive study of tokenization and data representation across foundation models and scientific data. -->
 
-The collection tracks methods that form, select, merge, quantize, parse, or study addressable model units. It separates the tokenizer from the foundation model that consumes its output. The current release contains 322 literature records and 78 frontier-lab or public-model profiles. The literature cutoff is September 6, 2026.
+The collection tracks methods that form, select, merge, quantize, parse, or study model units/tokens. It separates the tokenizer from the foundation model that consumes its output. 
+
+The current release contains 322 literature records and 78 frontier-lab or public-model profiles. 
 
 <!-- Cutoff: September 6, 2026. -->
 
 
 ## [Interactive Explorer](https://liugangcode.github.io/awesome-tokenization/)
 
+## Contents
+
+- [0. Cross-Cutting Foundations, Surveys, and Evaluation](#0-cross-cutting-foundations-surveys-and-evaluation)
+- [1.1 Text and Code](#11-text-and-code)
+- [1.2 Images and Video](#12-images-and-video)
+- [1.3 Audio and Speech](#13-audio-and-speech)
+- [1.4 Graphs, Tables, and Recommendation](#14-graphs-tables-and-recommendation)
+- [1.5 Time Series, Physical Fields, and World Models](#15-time-series-physical-fields-and-world-models)
+- [1.6 Multimodal Interfaces](#16-multimodal-interfaces)
+- [2.1 DNA and RNA](#21-dna-and-rna)
+- [2.2 Proteins and Peptides](#22-proteins-and-peptides)
+- [2.3 Molecules and Reactions](#23-molecules-and-reactions)
+- [2.4 Crystals, Materials, and Polymers](#24-crystals-materials-and-polymers)
+- [2.5 Spectra and Microscopy](#25-spectra-and-microscopy)
+- [2.6 Omics and Cells](#26-omics-and-cells)
+- [2.7 Physical Fields and Simulations](#27-physical-fields-and-simulations)
+- [3. Theoretical and Method Foundations for Future Tokenizers](#3-theoretical-and-method-foundations-for-future-tokenizers)
+- [Contributing](#contributing)
 
 ## 0. Cross-Cutting Foundations, Surveys, and Evaluation
 
@@ -353,7 +373,7 @@ The collection tracks methods that form, select, merge, quantize, parse, or stud
 - 2025\. Palash Bera and Jagannath Mondal. [Accurate Prediction of the Kinetic Sequence of Physicochemical States Using Generative Artificial Intelligence](https://doi.org/10.1039/D5SC00108K). *Chemical Science*.
 - 2025\. Yiqing Shen, Hao Ding, Lalithkumar Seenivasan, Tianmin Shu, and Mathias Unberath. [Position: Foundation Models Need Digital Twin Representations](https://arxiv.org/abs/2505.03798). *arXiv preprint arXiv:2505.03798*.
 
-## 6. Theoretical and Method Foundations for Future Tokenizers
+## 3. Theoretical and Method Foundations for Future Tokenizers
 
 > This section records papers that define useful criteria for tokenizers and earlier methods that can form units, even when the authors did not use the term *tokenizer*. 
 
