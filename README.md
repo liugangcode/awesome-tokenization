@@ -4,7 +4,7 @@
 
 The collection tracks methods that form, select, merge, quantize, parse, or study model units/tokens. It separates the tokenizer from the foundation model that consumes its output. 
 
-The current release contains 361 literature records and 81 frontier-lab or public models.
+The current release contains 355 unique literature records and 81 frontier-lab or public models.
 
 <!-- Cutoff: September 6, 2026. -->
 
