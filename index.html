@@ -187,7 +187,6 @@
         <div class="def Neural"><b>Neural</b><p>A trained neural module determines token boundaries, membership, selection, or codes.</p></div>
         <div class="def Hybrid"><b>Hybrid</b><p>Neural and algorithmic components both determine one result, or distinct tokenizer types form one combined stream.</p></div>
       </div>
-      <p class="meta">Theory, evaluation, surveys, tokenizer use, and context are recorded under <b>Record type</b>. They are no longer mixed with implementation basis.</p>
       <div class="legend" id="legend"></div>
       <div class="stack" id="overall" style="margin-top:12px" aria-label="Overall implementation basis distribution"></div>
     </section>
@@ -397,7 +396,7 @@
     const max=Math.max(1,...rows.map(x=>x[1]));
     document.getElementById("familyTitle").textContent=`${familyClass} Families`;
     document.getElementById("families").innerHTML=rows.map(([family,n])=>{const examples=(familyExamples[family]||[]).map(([label,link])=>`<a href="${esc(link)}" target="_blank" rel="noopener">${esc(label)}</a>`).join(", ");return `<div class="family-item"><div class="facet-row"><span class="facet-name" title="${esc(family)}">${esc(family)}</span><span class="stack"><span class="seg ${keyClass(familyClass)}" style="width:${100*n/max}%" title="${n} papers"></span></span><span class="facet-total">${n}</span></div><p class="family-scope">${esc(familyScopes[family]||"")}${examples?` Examples include ${examples}.`:""}</p></div>`;}).join("");
-    const notes={Algorithmic:"The split asks whether units are stated directly, composed by expert rules, or composed by rules fitted from data.",Neural:"The split follows final unit formation: quantization, learned selection or composition, or continuous latent encoding.",Hybrid:"The split follows how neural and algorithmic steps are arranged: joint, sequential, or separate streams."};
+    const notes={Algorithmic:"Whether units are stated directly, composed by expert rules, or composed by rules fitted from data.",Neural:"Quantization, learned selection or composition, or continuous latent encoding.",Hybrid:"How neural and algorithmic steps are arranged: joint, sequential, or separate streams."};
     document.getElementById("familyNote").textContent=notes[familyClass];
   }
   document.querySelectorAll("[data-family-class]").forEach(b=>b.addEventListener("click",()=>{familyClass=b.dataset.familyClass;document.querySelectorAll("[data-family-class]").forEach(x=>{const on=x===b;x.classList.toggle("active",on);x.setAttribute("aria-pressed",String(on));});renderFamilies();}));
