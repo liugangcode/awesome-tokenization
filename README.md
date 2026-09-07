@@ -4,7 +4,7 @@
 
 The collection tracks methods that form, select, merge, quantize, parse, or study model units/tokens. It separates the tokenizer from the foundation model that consumes its output. 
 
-The current release contains 322 literature records and 78 frontier-lab or public models. 
+The current release contains 361 literature records and 81 frontier-lab or public models.
 
 <!-- Cutoff: September 6, 2026. -->
 
@@ -23,11 +23,12 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - [2.2 Proteins and Peptides](#22-proteins-and-peptides)
 - [2.3 Molecules and Reactions](#23-molecules-and-reactions)
 - [2.4 Crystals, Materials, and Polymers](#24-crystals-materials-and-polymers)
-- [2.5 Spectra and Microscopy](#25-spectra)
+- [2.5 Spectra and Microscopy](#25-spectra-and-microscopy)
 - [2.6 Medical Imaging and Digital Pathology](#26-medical-imaging-and-digital-pathology)
 - [2.7 Omics and Cells](#27-omics-and-cells)
 - [2.8 Physical Fields and Simulations](#28-physical-fields-and-simulations)
 - [2.9 Earth System Observations](#29-earth-system-observations)
+- [Public Hugging Face Models](#public-hugging-face-models)
 - [3. Theoretical and Method Foundations for Future Tokenizers](#3-theoretical-and-method-foundations-for-future-tokenizers)
 - [Contributing](#contributing)
 
@@ -65,13 +66,19 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2020\. Ivan Provilkov, Dmitrii Emelianenko, and Elena Voita. [BPE-Dropout: Simple and Effective Subword Regularization](https://aclanthology.org/2020.acl-main.170/). *ACL*.
 - 2020\. Kaj Bostrom and Greg Durrett. [Byte Pair Encoding Is Suboptimal for Language Model Pretraining](https://aclanthology.org/2020.findings-emnlp.414/). *Findings of EMNLP*.
 - 2020\. Tom B. Brown et al. [Language Models Are Few-Shot Learners](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html). *Advances in Neural Information Processing Systems*.
+- 2020\. Jonathan Herzig et al. [TAPAS: Weakly Supervised Table Parsing via Pre-training](https://arxiv.org/abs/2004.02349). *ACL*.
 - 2021\. Phillip Rust, Jonas Pfeiffer, Ivan Vulić, Sebastian Ruder, and Iryna Gurevych. [How Good Is Your Tokenizer? On the Monolingual Performance of Multilingual Language Models](https://aclanthology.org/2021.acl-long.243/). *ACL*.
 - 2022\. Jonathan H. Clark et al. [CANINE: Pre-training an Efficient Tokenization-Free Encoder for Language Representation](https://aclanthology.org/2022.tacl-1.5/). *Transactions of the Association for Computational Linguistics*.
 - 2022\. Linting Xue et al. [ByT5: Towards a Token-Free Future with Pre-trained Byte-to-Byte Models](https://aclanthology.org/2022.tacl-1.17/). *Transactions of the Association for Computational Linguistics*.
 - 2022\. Yi Tay et al. [Charformer: Fast Character Transformers via Gradient-Based Subword Tokenization](https://openreview.net/forum?id=JtBRnrlOEFN). *International Conference on Learning Representations*.
 - 2023\. Aleksandar Petrov, Emanuele La Malfa, Philip Torr, Adel Bibi. [Language Model Tokenizers Introduce Unfairness Between Languages](https://proceedings.neurips.cc/paper_files/paper/2023/hash/74bb24dca8334adce292883b4b651eda-Abstract-Conference.html). *Advances in Neural Information Processing Systems*.
 - 2023\. Lili Yu et al. [MEGABYTE: Predicting Million-Byte Sequences with Multiscale Transformers](https://proceedings.neurips.cc/paper_files/paper/2023/hash/f8f78f8043f35890181a824e53a57134-Abstract-Conference.html). *Advances in Neural Information Processing Systems*.
+- 2023\. Alec Radford et al. [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356). *International Conference on Machine Learning*.
+- 2023\. Jade Copet et al. [Simple and Controllable Music Generation](https://arxiv.org/abs/2306.05284). *Advances in Neural Information Processing Systems*.
 - 2024\. Artidoro Pagnoni et al. [Byte Latent Transformer: Patches Scale Better Than Tokens](https://arxiv.org/abs/2412.09871). *arXiv preprint arXiv:2412.09871*.
+- 2024\. Anton Lozhkov et al. [StarCoder 2 and The Stack v2: The Next Generation](https://arxiv.org/abs/2402.19173). *arXiv preprint arXiv:2402.19173*.
+- 2024\. Haotian Liu et al. [Improved Baselines with Visual Instruction Tuning](https://arxiv.org/abs/2310.03744). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2024\. Patrick Esser et al. [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2403.03206). *International Conference on Machine Learning*.
 - 2024\. Craig W. Schmidt et al. [Tokenization Is More Than Compression](https://aclanthology.org/2024.emnlp-main.40/). *Proceedings of EMNLP*.
 - 2024\. Darius Fehér, Ivan Vulić, and Benjamin Minixhofer. [Retrofitting Large Language Models with Dynamic Tokenization](https://arxiv.org/abs/2411.18553). *arXiv*.
 - 2024\. DeepSeek-AI. [DeepSeek LLM: Scaling Open-Source Language Models with Longtermism](https://arxiv.org/abs/2401.02954). *arXiv preprint arXiv:2401.02954*.
@@ -84,9 +91,12 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2024\. Omer Goldman et al. [Unpacking Tokenization: Evaluating Text Compression and Its Correlation with Model Performance](https://aclanthology.org/2024.findings-acl.134/). *Findings of ACL*.
 - 2024\. Omri Uzan, Craig W. Schmidt, Chris Tanner, and Yuval Pinter. [Greed Is All You Need: An Evaluation of Tokenizer Inference Methods](https://aclanthology.org/2024.acl-short.73/). *ACL*.
 - 2024\. Qwen Team. [Qwen2 Technical Report](https://arxiv.org/abs/2407.10671). *arXiv preprint arXiv:2407.10671*.
+- 2024\. Qwen Team. [Qwen2.5 Technical Report](https://arxiv.org/abs/2412.15115). *arXiv preprint arXiv:2412.15115*.
 - 2024\. Xingwu Sun et al. [Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent](https://arxiv.org/abs/2411.02265). *arXiv preprint arXiv:2411.02265*.
 - 2024\. Yekun Chai, Yewei Fang, Qiwei Peng, and Xuhong Li. [Tokenization Falling Short: On Subword Robustness in Large Language Models](https://aclanthology.org/2024.findings-emnlp.86/). *Findings of EMNLP*.
 - 2025\. Catherine Arnett, Tyler Chang, Stella Biderman, and Benjamin Bergen. [Explaining and Mitigating Crosslingual Tokenizer Inequities](https://proceedings.neurips.cc/paper_files/paper/2025/hash/5b91cefbfa52340af2f16f249572dc76-Abstract-Conference.html). *NeurIPS*.
+- 2024\. Zhuoyi Yang et al. [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072). *arXiv preprint arXiv:2408.06072*.
+- 2025\. Qwen Team. [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923). *arXiv preprint arXiv:2502.13923*.
 - 2025\. Hao Chen et al. [Masked Autoencoders Are Effective Tokenizers for Diffusion Models](https://proceedings.mlr.press/v267/chen25v.html). *International Conference on Machine Learning*.
 - 2025\. Hongzhi Huang et al. [Over-Tokenized Transformer: Vocabulary Is Generally Worth Scaling](https://proceedings.mlr.press/v267/huang25bb.html). *International Conference on Machine Learning*.
 - 2025\. Jia Peng Lim, Shawn Tan, Davin Choo, and Hady W. Lauw. [A Partition Cover Approach to Tokenization](https://proceedings.neurips.cc/paper_files/paper/2025/hash/605e59e78284907aa4fce5280838def3-Abstract-Conference.html). *NeurIPS*.
@@ -114,7 +124,10 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2023\. Daniel Bolya, Cheng-Yang Fu, Xiaoliang Dai, Peizhao Zhang, Christoph Feichtenhofer, Judy Hoffman. [Token Merging: Your ViT but Faster](https://openreview.net/forum?id=JroZRaRw7Eu). *International Conference on Learning Representations*.
 - 2023\. L. Yu, Y. Cheng, et al. [Magvit: Masked generative video transformer](https://openaccess.thecvf.com/content/CVPR2023/html/Yu_MAGVIT_Masked_Generative_Video_Transformer_CVPR_2023_paper.html). *CVPR*.
 - 2023\. Mahmoud Assran et al. [Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture](https://arxiv.org/abs/2301.08243). *Conference on Computer Vision and Pattern Recognition*.
+- 2023\. Alexander Kirillov et al. [Segment Anything](https://arxiv.org/abs/2304.02643). *IEEE/CVF International Conference on Computer Vision*.
 - 2024\. Adrien Bardes et al. [Revisiting Feature Prediction for Learning Visual Representations from Video](https://arxiv.org/abs/2404.08471). *European Conference on Computer Vision*.
+- 2024\. Haotian Liu et al. [Improved Baselines with Visual Instruction Tuning](https://arxiv.org/abs/2310.03744). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2024\. Patrick Esser et al. [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2403.03206). *International Conference on Machine Learning*.
 - 2024\. Dan Kondratyuk et al. [VideoPoet: A Large Language Model for Zero-Shot Video Generation](https://arxiv.org/abs/2312.14125). *International Conference on Machine Learning*.
 - 2024\. F. Mentzer, D. Minnen, et al. [Finite Scalar Quantization: VQ-VAE Made Simple](https://openreview.net/forum?id=8ishA3LxN8). *ICLR*.
 - 2024\. Jiahui Wang et al. [OmniTokenizer: A Joint Image-Video Tokenizer for Visual Generation](https://proceedings.neurips.cc/paper_files/paper/2024/hash/31994923f58ae5b2d661b300bd439107-Abstract-Conference.html). *NeurIPS*.
@@ -127,6 +140,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2024\. Yang Jin, Zhicheng Sun, Kun Xu, Kun Xu, Liwei Chen, Hao Jiang, Quzhe Huang, Chengru Song, Yuliang Liu, Di Zhang, Yang Song, Kun Gai, and Yadong Mu. [Video-LaVIT: Unified Video-Language Pre-Training with Decoupled Visual-Motional Tokenization](https://proceedings.mlr.press/v235/jin24f.html). *International Conference on Machine Learning*.
 - 2024\. Zhuoyi Yang et al. [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072). *arXiv preprint arXiv:2408.06072*.
 - 2025\. Adrian Bulat, Yassine Ouali, and Georgios Tzimiropoulos. [Compress & Cache: Vision Token Compression for Efficient Generation and Retrieval](https://proceedings.neurips.cc/paper_files/paper/2025/hash/2e01083b381b4865919b4915ef32e3d2-Abstract-Conference.html). *NeurIPS*.
+- 2025\. Qwen Team. [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923). *arXiv preprint arXiv:2502.13923*.
 - 2025\. Anlin Zheng, Xin Wen, Xuanyang Zhang, Chuofan Ma, Tiancai Wang, Gang Yu, Xiangyu Zhang, and Xiaojuan Qi. [Vision Foundation Models as Effective Visual Tokenizers for Autoregressive Generation](https://proceedings.neurips.cc/paper_files/paper/2025/hash/5a829e299ebc1c1615ddb09e98fb6ce8-Abstract-Conference.html). *NeurIPS*.
 - 2025\. Chuofan Ma et al. [UniTok: A Unified Tokenizer for Visual Generation and Understanding](https://proceedings.neurips.cc/paper_files/paper/2025/hash/bbe04d329d531e8814f1199098bd8fb6-Abstract-Conference.html). *NeurIPS*.
 - 2025\. Duy-Kien Nguyen, Mahmoud Assran, Unnat Jain, Martin R. Oswald, Cees G. M. Snoek, and Xinlei Chen. [An Image Is Worth More Than 16x16 Patches: Exploring Transformers on Individual Pixels](https://arxiv.org/abs/2406.09415). *International Conference on Learning Representations*.
@@ -159,7 +173,9 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2021\. N. Zeghidour, A. Luebs, et al. [Soundstream: An end-to-end neural audio codec](https://arxiv.org/abs/2107.03312). *TASLP*.
 - 2021\. Wei-Ning Hsu et al. [HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units](https://doi.org/10.1109/TASLP.2021.3122291). *IEEE/ACM Transactions on Audio, Speech, and Language Processing*.
 - 2022\. Zalán Borsos et al. [AudioLM: A Language Modeling Approach to Audio Generation](https://arxiv.org/abs/2209.03143). *arXiv*.
+- 2022\. Alec Radford et al. [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356). *arXiv preprint arXiv:2212.04356*.
 - 2023\. A. Defossez, J. Copet, et al. [High Fidelity Neural Audio Compression](https://openreview.net/forum?id=ivCd8z8zR2). *TMLR*.
+- 2023\. Jade Copet et al. [Simple and Controllable Music Generation](https://arxiv.org/abs/2306.05284). *Advances in Neural Information Processing Systems*.
 - 2023\. Andrea Agostinelli et al. [MusicLM: Generating Music From Text](https://arxiv.org/abs/2301.11325). *arXiv*.
 - 2023\. C. Wang, S. Chen, et al. [Neural codec language models are zero-shot text to speech synthesizers](https://arxiv.org/abs/2301.02111). *arXiv*.
 - 2023\. Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar. [High-Fidelity Audio Compression with Improved RVQGAN](https://proceedings.neurips.cc/paper_files/paper/2023/hash/58d0e78cf042af5876e12661087bea12-Abstract-Conference.html). *NeurIPS*.
@@ -175,6 +191,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 ## 1.4 Point Clouds and Three-Dimensional Structure
 
 - 2022\. Xumin Yu, Lulu Tang, Yongming Rao, Tiejun Huang, Jie Zhou, and Jiwen Lu. [Point-BERT: Pre-Training 3D Point Cloud Transformers With Masked Point Modeling](https://openaccess.thecvf.com/content/CVPR2022/html/Yu_Point-BERT_Pre-Training_3D_Point_Cloud_Transformers_With_Masked_Point_Modeling_CVPR_2022_paper.html). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2025\. Xiaoyang Wu et al. [Sonata: Self-Supervised Learning of Reliable Point Representations](https://arxiv.org/abs/2503.16429). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
 - 2025\. Jian Liu et al. [FreeMesh: Boosting Mesh Generation with Coordinates Merging](https://proceedings.mlr.press/v267/liu25bz.html). *International Conference on Machine Learning*.
 
 ## 1.5 Graphs and Tables
@@ -182,6 +199,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2011\. Nino Shervashidze et al. [Weisfeiler-Lehman Graph Kernels](https://www.jmlr.org/papers/v12/shervashidze11a.html). *Journal of Machine Learning Research*.
 - 2017\. Annamalai Narayanan et al. [graph2vec: Learning Distributed Representations of Graphs](https://arxiv.org/abs/1707.05005). *Mining and Learning with Graphs Workshop*.
 - 2020\. Xin Huang et al. [TabTransformer: Tabular Data Modeling Using Contextual Embeddings](https://arxiv.org/abs/2012.06678). *arXiv*.
+- 2020\. Jonathan Herzig et al. [TAPAS: Weakly Supervised Table Parsing via Pre-training](https://arxiv.org/abs/2004.02349). *ACL*.
 - 2021\. M. Galkin, E. Denis, et al. [Nodepiece: Compositional and parameter-efficient representations of large knowledge graphs](https://openreview.net/forum?id=xMJWUKJnFSw). *arXiv*.
 - 2021\. Yury Gorishniy, Ivan Rubachev, Valentin Khrulkov, Artem Babenko. [Revisiting Deep Learning Models for Tabular Data](https://proceedings.neurips.cc/paper/2021/hash/9d86d83f925f2149e9edb0ac3b49229c-Abstract.html). *Advances in Neural Information Processing Systems*.
 - 2022\. Jinheon Baek et al. [Accurate Learning of Graph Representations with Graph Multiset Pooling](https://openreview.net/forum?id=JHcqXGaqiGn). *ICLR*.
@@ -206,6 +224,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2023\. Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, and Jayant Kalagnanam. [A Time Series Is Worth 64 Words: Long-Term Forecasting with Transformers](https://openreview.net/forum?id=Jbdc0vTOcol). *ICLR*.
 - 2024\. Abdul Fatir Ansari et al. [Chronos: Learning the Language of Time Series](https://arxiv.org/abs/2403.07815). *arXiv preprint arXiv:2403.07815*.
 - 2024\. Abhimanyu Das et al. [A Decoder-Only Foundation Model for Time-Series Forecasting](https://arxiv.org/abs/2310.10688). *arXiv preprint arXiv:2310.10688*.
+- 2024\. Vijay Ekambaram et al. [Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series](https://arxiv.org/abs/2401.03955). *arXiv preprint arXiv:2401.03955*.
 - 2024\. Mononito Goswami et al. [MOMENT: A Family of Open Time-Series Foundation Models](https://proceedings.mlr.press/v235/goswami24a.html). *ICML*.
 - 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
 - 2025\. Luca Masserano et al. [Enhancing Foundation Models for Time Series Forecasting via Wavelet-Based Tokenization](https://proceedings.mlr.press/v267/masserano25a.html). *ICML*.
@@ -225,16 +244,21 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2023\. David Mizrahi, Roman Bachmann, Oğuzhan Fatih Kar, Teresa Yeo, Mingfei Gao, Afshin Dehghan, and Amir Zamir. [4M: Massively Multimodal Masked Modeling](https://proceedings.neurips.cc/paper_files/paper/2023/hash/b6446566965fa38e183650728ab70318-Abstract-Conference.html). *NeurIPS*.
 - 2023\. Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485). *NeurIPS*.
 - 2023\. Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://proceedings.mlr.press/v202/li23q.html). *ICML*.
+- 2023\. Jade Copet et al. [Simple and Controllable Music Generation](https://arxiv.org/abs/2306.05284). *Advances in Neural Information Processing Systems*.
 - 2023\. OpenAI. [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774). *arXiv preprint arXiv:2303.08774*.
 - 2024\. Amazon Artificial General Intelligence. [The Amazon Nova Family of Models: Technical Report and Model Card](https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card). *Amazon Technical Reports*.
 - 2024\. Anthropic. [The Claude 3 Model Family: Opus, Sonnet, Haiku](https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf). *Anthropic Model Card*.
 - 2024\. Brandon McKinzie et al. [MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611). *arXiv preprint arXiv:2403.09611*.
+- 2024\. Haotian Liu et al. [Improved Baselines with Visual Instruction Tuning](https://arxiv.org/abs/2310.03744). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2024\. Patrick Esser et al. [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2403.03206). *International Conference on Machine Learning*.
+- 2024\. Alec Radford et al. [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356). *International Conference on Machine Learning*.
 - 2024\. Gemini Team. [Gemini 1.5: Unlocking Multimodal Understanding across Millions of Tokens of Context](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf). *Google DeepMind Technical Report*.
 - 2024\. J. Lu, C. Clark, et al. [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](https://openaccess.thecvf.com/content/CVPR2024/html/Lu_Unified-IO_2_Scaling_Autoregressive_Multimodal_Models_with_Vision_Language_Audio_CVPR_2024_paper.html). *CVPR*.
 - 2024\. J. Zhan, J. Dai, et al. [AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling](https://aclanthology.org/2024.acl-long.521/). *ACL*.
 - 2024\. Microsoft. [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219). *arXiv preprint arXiv:2404.14219*.
 - 2024\. Peng Wang et al. [Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution](https://arxiv.org/abs/2409.12191). *arXiv preprint arXiv:2409.12191*.
 - 2024\. Roman Bachmann et al. [4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities](https://proceedings.neurips.cc/paper_files/paper/2024/hash/71883294314045d60c900113a359934b-Abstract-Conference.html). *NeurIPS*.
+- 2024\. Zhuoyi Yang et al. [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072). *arXiv preprint arXiv:2408.06072*.
 - 2024\. Shengbang Tong et al. [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860). *NeurIPS*.
 - 2024\. Shukang Yin et al. [A Survey on Multimodal Large Language Models](https://doi.org/10.1093/nsr/nwae403). *National Science Review*.
 - 2024\. Team, Chameleon. [Chameleon: Mixed-modal early-fusion foundation models](https://arxiv.org/abs/2405.09818). *arXiv*.
@@ -249,13 +273,19 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 
 - 2021\. Yanrong Ji, Zhihan Zhou, Han Liu, Ramana V. Davuluri. [DNABERT: Pre-Trained Bidirectional Encoder Representations from Transformers Model for DNA-Language in Genome](https://doi.org/10.1093/bioinformatics/btab083). *Bioinformatics*.
 - 2023\. Eric Nguyen, Michael Poli, Matthew G. Durrant, Armin W. Thomas, Brian Hie, Stefano Ermon, Christopher Re. [HyenaDNA: Long-Range Genomic Sequence Modeling at Single Nucleotide Resolution](https://arxiv.org/abs/2306.15794). *arXiv preprint arXiv:2306.15794*.
-- 2023\. Hugo Dalla-Torre et al. [The Nucleotide Transformer: Building and Evaluating Robust Foundation Models for Human Genomics](https://doi.org/10.1101/2023.01.11.523679). *bioRxiv*.
+- 2025\. Hugo Dalla-Torre et al. [Nucleotide Transformer: Building and Evaluating Robust Foundation Models for Human Genomics](https://www.nature.com/articles/s41592-024-02523-z). *Nature Methods*.
 - 2023\. Maxim Zvyagin et al. [GenSLMs: Genome-Scale Language Models Reveal SARS-CoV-2 Evolutionary Dynamics](https://journals.sagepub.com/doi/10.1177/10943420231201154). *The International Journal of High Performance Computing Applications*.
 - 2023\. Zhihan Zhou et al. [DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome](https://arxiv.org/abs/2306.15006). *arXiv preprint arXiv:2306.15006*.
 - 2024\. Carlos Outeiral and Charlotte M. Deane. [Codon Language Embeddings Provide Strong Signals for Use in Protein Engineering](https://www.nature.com/articles/s42256-024-00791-0). *Nature Machine Intelligence*.
 - 2024\. Eric Nguyen et al. [Sequence Modeling and Design from Molecular to Genome Scale with Evo](https://doi.org/10.1126/science.ado9336). *Science*.
 - 2024\. Jan Christian Dietrich et al. [DNA Language Model GROVER Learns Sequence Context in the Human Genome](https://www.nature.com/articles/s42256-024-00872-0). *Nature Machine Intelligence*.
 - 2024\. Yair Schiff et al. [Caduceus: Bi-Directional Equivariant Long-Range DNA Sequence Modeling](https://arxiv.org/abs/2403.03234). *ICML*.
+- 2022\. Jiayang Chen et al. [Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions](https://arxiv.org/abs/2204.00300). *arXiv preprint arXiv:2204.00300*.
+- 2024\. Chai Discovery Team et al. [Chai-1: Decoding the Molecular Interactions of Life](https://www.biorxiv.org/content/10.1101/2024.10.10.615955v2). *bioRxiv*.
+- 2024\. Jeremy Wohlwend et al. [Boltz-1: Democratizing Biomolecular Interaction Modeling](https://www.biorxiv.org/content/10.1101/2024.11.19.624167v4). *bioRxiv*.
+- 2025\. ByteDance AI Lab. [Protenix: Advancing Structure Prediction Through a Comprehensive AlphaFold3 Reproduction](https://openreview.net/forum?id=rdupZxS99R). *International Conference on Learning Representations*.
+- 2025\. Gabriele Corso et al. [Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1). *bioRxiv*.
+- 2025\. Eric Wang et al. [TxGemma: Efficient and Agentic LLMs for Therapeutics](https://arxiv.org/abs/2504.06196). *arXiv preprint arXiv:2504.06196*.
 - 2025\. Conrad Testagrose and Christina Boucher. [Tokenization and Deep Learning Architectures in Genomics: A Comprehensive Review](https://doi.org/10.1016/j.csbj.2025.07.038). *Computational and Structural Biotechnology Journal*.
 - 2025\. Haonan Feng et al. [Benchmarking DNA Foundation Models for Genomic and Genetic Tasks](https://www.nature.com/articles/s41467-025-65823-8). *Nature Communications*.
 - 2025\. LeAnn M. Lindsey. [The Impact of Tokenizer Selection in Genomic Language Models](https://academic.oup.com/bioinformatics/article/41/9/btaf456/8237360). *Bioinformatics*.
@@ -270,8 +300,12 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2022\. Nadav Brandes, Dan Ofer, Yam Peleg, Nadav Rappoport, Michal Linial. [ProteinBERT: A Universal Deep-Learning Model of Protein Sequence and Function](https://doi.org/10.1093/bioinformatics/btac020). *Bioinformatics*.
 - 2023\. Ali Madani et al. [Large Language Models Generate Functional Protein Sequences Across Diverse Families](https://doi.org/10.1038/s41587-022-01618-2). *Nature Biotechnology*.
 - 2023\. Ruochi Zhang et al. [PepLand: A Large-Scale Pre-Trained Peptide Representation Model for a Comprehensive Landscape of Both Canonical and Non-Canonical Amino Acids](https://arxiv.org/abs/2311.04419). *arXiv preprint arXiv:2311.04419*.
+- 2023\. Tianlai Chen et al. [PepMLM: Target Sequence-Conditioned Generation of Therapeutic Peptide Binders via Span Masked Language Modeling](https://arxiv.org/abs/2310.03842). *arXiv preprint arXiv:2310.03842*.
 - 2023\. Zeming Lin et al. [Evolutionary-Scale Prediction of Atomic-Level Protein Structure with a Language Model](https://doi.org/10.1126/science.ade2574). *Science*.
 - 2024\. Andrew Liu, Axel Elaldi, Nathan Russell, and Olivia Viessmann. [Bio2Token: All-Atom Tokenization of Any Biomolecular Structure with Mamba](https://arxiv.org/abs/2410.19110). *arXiv preprint arXiv:2410.19110*.
+- 2024\. Jiahan Li, Chaoran Cheng, Zuofan Wu, Ruihan Guo, Shitong Luo, Zhizhou Ren, Jian Peng, and Jianzhu Ma. [Full-Atom Peptide Design based on Multi-modal Flow Matching](https://proceedings.mlr.press/v235/li24o.html) (PepFlow). *International Conference on Machine Learning*.
+- 2024\. Xiangzhe Kong, Yinjun Jia, Wenbing Huang, and Yang Liu. [Full-Atom Peptide Design with Geometric Latent Diffusion](https://arxiv.org/abs/2402.13555). *Advances in Neural Information Processing Systems*.
+- 2024\. Haitao Lin, Odin Zhang, Huifeng Zhao, Dejun Jiang, Lirong Wu, Zicheng Liu, Yufei Huang, and Stan Z. Li. [PPFLOW: Target-Aware Peptide Design with Torsional Flow Matching](https://proceedings.mlr.press/v235/lin24z.html). *International Conference on Machine Learning*.
 - 2024\. Benoit Gaujac et al. [Learning the Language of Protein Structure](https://arxiv.org/abs/2405.15840). *arXiv*.
 - 2024\. Jin Su et al. [SaProt: Protein Language Modeling with Structure-Aware Vocabulary](https://openreview.net/forum?id=6MRm3G4NiU). *International Conference on Learning Representations*.
 - 2024\. Josh Abramson et al. [Accurate Structure Prediction of Biomolecular Interactions with AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w). *Nature*.
@@ -285,12 +319,18 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2024\. Xinyou Wang et al. [DPLM-2: A Multimodal Diffusion Protein Language Model](https://arxiv.org/abs/2410.13782). *arXiv*.
 - 2024\. Zhangyang Gao et al. [FoldToken: Learning Protein Language via Vector Quantization and Beyond](https://arxiv.org/abs/2403.09673). *arXiv*.
 - 2024\. Zhangyang Gao, Cheng Tan, and Stan Z. Li. [FoldToken2: Learning Compact, Invariant and Generative Protein Structure Language](https://arxiv.org/abs/2407.00050). *arXiv*.
+- 2024\. Chai Discovery Team et al. [Chai-1: Decoding the Molecular Interactions of Life](https://www.biorxiv.org/content/10.1101/2024.10.10.615955v2). *bioRxiv*.
+- 2024\. Jeremy Wohlwend et al. [Boltz-1: Democratizing Biomolecular Interaction Modeling](https://www.biorxiv.org/content/10.1101/2024.11.19.624167v4). *bioRxiv*.
+- 2025\. ByteDance AI Lab. [Protenix: Advancing Structure Prediction Through a Comprehensive AlphaFold3 Reproduction](https://openreview.net/forum?id=rdupZxS99R). *International Conference on Learning Representations*.
+- 2025\. Gabriele Corso et al. [Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1). *bioRxiv*.
+- 2025\. Eric Wang et al. [TxGemma: Efficient and Agentic LLMs for Therapeutics](https://arxiv.org/abs/2504.06196). *arXiv preprint arXiv:2504.06196*.
 - 2025\. Thomas Hayes et al. [Simulating 500 Million Years of Evolution with a Language Model](https://doi.org/10.1126/science.ads0018). *Science*.
 - 2025\. Xinyu Yuan et al. [Protein Structure Tokenization: Benchmarking and New Recipe](https://proceedings.mlr.press/v267/yuan25i.html). *International Conference on Machine Learning*.
 - 2025\. Zijing Liu, Bin Feng, He Cao, and Yu Li. [From Static Structures to Ensembles: Studying and Harnessing Protein Structure Tokenization](https://arxiv.org/abs/2511.10056). *NeurIPS AI for Science Workshop*.
 - 2026\. Kaiwen Shi and Carlos Oliver. [ENSEMBITS: An Alphabet of Protein Conformational Ensembles](https://arxiv.org/abs/2605.13789). *arXiv preprint arXiv:2605.13789*.
 - 2026\. Michael Sun, Weize Yuan, Gang Liu, Wojciech Matusik, Marinka Zitnik. [Protein Structure Tokenization via Geometric Byte Pair Encoding](https://arxiv.org/abs/2511.11758). *International Conference on Learning Representations*.
 - 2026\. Rohit Dilip, Evan Zhang, Ayush Varshney, and David Van Valen. [Flow Autoencoders Are Effective Protein Tokenizers](https://openreview.net/forum?id=5p9uled7JM). *International Conference on Learning Representations*.
+- 2026\. Biohub. [Language Modeling Materializes a World Model of Protein Biology](https://biohub.ai/papers/esm_protein.pdf). *Preprint*.
 
 ## 2.3 Molecules and Reactions
 
@@ -305,18 +345,26 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2022\. Xiangzhe Kong et al. [Molecule Generation by Principal Subgraph Mining and Assembling](https://proceedings.neurips.cc/paper_files/paper/2022/hash/1160792eab11de2bbaf9e71fce191e8c-Abstract-Conference.html). *Advances in Neural Information Processing Systems*.
 - 2023\. Gengmo Zhou et al. [Uni-Mol: A Universal 3D Molecular Representation Learning Framework](https://openreview.net/forum?id=6K2RM6wVqKu). *International Conference on Learning Representations*.
 - 2023\. Umit V. Ucak, Islambek Ashyrmamatov, and Juyong Lee. [Improving the Quality of Chemical Language Model Outcomes with Atom-in-SMILES Tokenization](https://doi.org/10.1186/s13321-023-00725-9). *Journal of Cheminformatics*.
+- 2022\. Jerret Ross et al. [Large-Scale Chemical Language Representations Capture Molecular Structure and Properties](https://www.nature.com/articles/s42256-022-00580-7). *Nature Machine Intelligence*.
 - 2024\. Gang Liu, Eric Inae, Tong Zhao, Meng Jiang. [Graph Diffusion Transformers for Multi-Conditional Molecular Generation](https://arxiv.org/abs/2401.13858). *Advances in Neural Information Processing Systems*.
 - 2024\. Jinho Chang and Jong Chul Ye. [Bidirectional Generation of Structure and Properties Through a Single Molecular Foundation Model](https://www.nature.com/articles/s41467-024-46440-3). *Nature Communications*.
 - 2024\. Wei Feng et al. [Generation of 3D Molecules in Pockets via a Language Model](https://www.nature.com/articles/s42256-023-00775-6). *Nature Machine Intelligence*.
+- 2024\. Chai Discovery Team et al. [Chai-1: Decoding the Molecular Interactions of Life](https://www.biorxiv.org/content/10.1101/2024.10.10.615955v2). *bioRxiv*.
+- 2024\. Jeremy Wohlwend et al. [Boltz-1: Democratizing Biomolecular Interaction Modeling](https://www.biorxiv.org/content/10.1101/2024.11.19.624167v4). *bioRxiv*.
 - 2024\. Yuchen Shen and Barnabás Póczos. [GraphBPE: Molecular Graphs Meet Byte-Pair Encoding](https://arxiv.org/abs/2407.19039). *ICML AI for Science Workshop*.
 - 2025\. Gang Liu et al. [Learning Molecular Representation in a Cell](https://openreview.net/forum?id=BbZy8nI1si). *International Conference on Learning Representations*.
 - 2025\. Gang Liu, Michael Sun, Wojciech Matusik, Meng Jiang, Jie Chen. [Multimodal Large Language Models for Inverse Molecular Design with Retrosynthetic Planning](https://arxiv.org/abs/2410.04223). *International Conference on Learning Representations*.
 - 2025\. Haotian Cui et al. [Towards Multimodal Foundation Models in Molecular Cell Biology](https://www.nature.com/articles/s41586-025-08710-y). *Nature*.
 - 2025\. Jike Wang et al. [Token-Mol 1.0: Tokenized Drug Design with Large Language Models](https://www.nature.com/articles/s41467-025-59628-y). *Nature Communications*.
 - 2025\. Michael Sun, Weize Yuan, Gang Liu, Wojciech Matusik, Jie Chen. [Foundation Molecular Grammar: Multi-Modal Foundation Models Induce Interpretable Molecular Graph Languages](https://arxiv.org/abs/2505.22948). *International Conference on Machine Learning*.
+- 2025\. ByteDance AI Lab. [Protenix: Advancing Structure Prediction Through a Comprehensive AlphaFold3 Reproduction](https://openreview.net/forum?id=rdupZxS99R). *International Conference on Learning Representations*.
+- 2025\. Brandon M. Wood et al. [UMA: A Family of Universal Models for Atoms](https://arxiv.org/abs/2506.23971). *arXiv preprint arXiv:2506.23971*.
+- 2025\. Eric Wang et al. [TxGemma: Efficient and Agentic LLMs for Therapeutics](https://arxiv.org/abs/2504.06196). *arXiv preprint arXiv:2504.06196*.
+- 2025\. Gabriele Corso et al. [Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1). *bioRxiv*.
 - 2026\. Alexius Wadell, Anoushka Bhutani, and Venkatasubramanian Viswanathan. [Tokenization for Molecular Foundation Models](https://doi.org/10.1021/acs.jcim.5c01856). *Journal of Chemical Information and Modeling*.
 - 2026\. Gang Liu, Jie Chen, Yihan Zhu, Michael Sun, Tengfei Luo, Nitesh V. Chawla, Meng Jiang. [Graph Diffusion Transformers Are In-Context Molecular Designers](https://arxiv.org/abs/2510.08744). *International Conference on Learning Representations*.
 - 2026\. Xuan Liu et al. [Bridging Three-Dimensional Molecular Structures and Artificial Intelligence with a Conformation Description Language](https://www.nature.com/articles/s42256-026-01250-8). *Nature Machine Intelligence*.
+- 2026\. Chen Yang et al. [A Large-Scale Foundation Model Enables Simulation-to-Real Adaptation for Nuclear Magnetic Resonance-Based Molecular Structure Analysis](https://arxiv.org/abs/2606.20756). *arXiv preprint arXiv:2606.20756*.
 
 ## 2.4 Crystals, Materials, and Polymers
 
@@ -335,6 +383,7 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2024\. Tatsunori Taniai, Ryo Igarashi, Yoshitaka Ushiku, Kanta Ono. [Crystalformer: Infinitely Connected Attention for Periodic Structure Encoding](https://openreview.net/forum?id=fxQiecl9HB). *International Conference on Learning Representations*.
 - 2025\. Amil Merchant et al. [Foundation Models for Materials Discovery: Current State and Future Directions](https://doi.org/10.1038/s41524-025-01538-0). *npj Computational Materials*.
 - 2025\. Claudio Zeni et al. [A Generative Model for Inorganic Materials Design](https://doi.org/10.1038/s41586-025-08628-5). *Nature*.
+- 2025\. Brandon M. Wood et al. [UMA: A Family of Universal Models for Atoms](https://arxiv.org/abs/2506.23971). *arXiv preprint arXiv:2506.23971*.
 - 2025\. Fanmeng Wang, Shan Mei, Wentao Guo, Hongshuai Wang, Qi Ou, Zhifeng Gao, and Hongteng Xu. [Unifying Polymer Modeling and Design via a Conformation-Centric Generative Foundation Model](https://arxiv.org/abs/2510.16023). *arXiv preprint arXiv:2510.16023*.
 - 2025\. Fanmeng Wang, Wentao Guo, Qi Ou, Hongshuai Wang, Haitao Lin, Hongteng Xu, and Zhifeng Gao. [PolyConf: Unlocking Polymer Conformation Generation through Hierarchical Generative Models](https://proceedings.mlr.press/v267/wang25ah.html). *International Conference on Machine Learning*.
 - 2025\. Yihan Zhu, Gang Liu, Eric Inae, Tengfei Luo, Meng Jiang. [Learning Repetition-Invariant Representations for Polymer Informatics](https://arxiv.org/abs/2505.10726). *Advances in Neural Information Processing Systems*.
@@ -350,11 +399,16 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Kevin Eloff et al. [InstaNovo Enables Diffusion-Powered de Novo Peptide Sequencing in Large-Scale Proteomics Experiments](https://www.nature.com/articles/s42256-025-01019-5). *Nature Machine Intelligence*.
 - 2025\. Roman Bushuiev et al. [Self-Supervised Learning of Molecular Representations from Millions of Tandem Mass Spectra Using DreaMS](https://www.nature.com/articles/s41587-025-02663-3). *Nature Biotechnology*.
 - 2025\. Yang Xu et al. [A Large Language Model for Deriving Spectral Embeddings for Accurate Compound Identification in Mass Spectrometry](https://www.nature.com/articles/s42004-025-01708-7). *Communications Chemistry*.
+- 2026\. Chen Yang et al. [A Large-Scale Foundation Model Enables Simulation-to-Real Adaptation for Nuclear Magnetic Resonance-Based Molecular Structure Analysis](https://arxiv.org/abs/2606.20756). *arXiv preprint arXiv:2606.20756*.
 
 ## 2.6 Medical Imaging and Digital Pathology
 
 - 2024\. Ming Y. Lu et al. [A Visual-Language Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02856-4). *Nature Medicine*.
 - 2024\. Richard J. Chen et al. [Towards a General-Purpose Foundation Model for Computational Pathology](https://doi.org/10.1038/s41591-024-02857-3). *Nature Medicine*.
+- 2024\. Hanwen Xu et al. [A Whole-Slide Foundation Model for Digital Pathology from Real-World Data](https://www.nature.com/articles/s41586-024-07441-w). *Nature*.
+- 2024\. Eric Zimmermann et al. [Virchow2: Scaling Self-Supervised Mixed Magnification Models in Pathology](https://arxiv.org/abs/2408.00738). *arXiv preprint arXiv:2408.00738*.
+- 2026\. Andrew Sellergren et al. [MedGemma 1.5 Technical Report](https://arxiv.org/abs/2604.05081). *arXiv preprint arXiv:2604.05081*.
+- 2026\. Marin Scalbert et al. [H-optimus-1: A Foundation Model for Computational Histopathology](https://doi.org/10.1158/1538-7445.AM2026-LB174). *Cancer Research*.
 
 ## 2.7 Omics and Cells
 
@@ -365,6 +419,8 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2025\. Fan Zhang et al. [A Survey on Foundation Language Models for Single-Cell Biology](https://aclanthology.org/2025.acl-long.26/). *Proceedings of ACL*.
 - 2025\. Seungbeom Kim et al. [Single-Cell Foundation Models: Bringing Artificial Intelligence into Cell Biology](https://doi.org/10.1038/s12276-025-01547-5). *Experimental and Molecular Medicine*.
 - 2026\. Yanay Rosen et al. [Universal Cell Embedding Provides a Foundation Model for Cell Biology](https://doi.org/10.1038/s41586-026-10689-z). *Nature*.
+- 2025\. Abhinav K. Adduri et al. [Predicting Cellular Responses to Perturbation Across Diverse Contexts with State](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v1). *bioRxiv*.
+- 2026\. Mingze Dong et al. [Stack: In-Context Learning of Single-Cell Biology](https://doi.org/10.64898/2026.01.09.698608). *bioRxiv*.
 
 ## 2.8 Physical Fields and Simulations
 
@@ -386,6 +442,9 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2024\. Ilan Price et al. [Probabilistic Weather Forecasting with Machine Learning](https://doi.org/10.1038/s41586-024-08252-9). *Nature*.
 - 2024\. Stephan Hoyer et al. [Neural General Circulation Models for Weather and Climate](https://doi.org/10.1038/s41586-024-07744-y). *Nature*.
 - 2025\. Cristian Bodnar et al. [A Foundation Model for the Earth System](https://www.nature.com/articles/s41586-025-09005-y). *Nature*.
+- 2024\. Daniela Szwarcman et al. [Prithvi-EO-2.0: A Versatile Multi-Temporal Foundation Model for Earth Observation Applications](https://arxiv.org/abs/2412.02732). *arXiv preprint arXiv:2412.02732*.
+- 2024\. Johannes Schmude et al. [Prithvi WxC: Foundation Model for Weather and Climate](https://arxiv.org/abs/2409.13598). *arXiv preprint arXiv:2409.13598*.
+- 2025\. Johannes Jakubik et al. [TerraMind: Large-Scale Generative Multimodality for Earth Observation](https://arxiv.org/abs/2504.11171). *arXiv preprint arXiv:2504.11171*.
 
 ## 3. Theoretical and Method Foundations for Future Tokenizers
 
@@ -411,6 +470,63 @@ The current release contains 322 literature records and 78 frontier-lab or publi
 - 2019\. Christopher P. Burgess et al. [MONet: Unsupervised Scene Decomposition and Representation](https://arxiv.org/abs/1901.11390). *arXiv preprint arXiv:1901.11390*.
 - 2019\. Yochai Blau and Tomer Michaeli. [Rethinking Lossy Compression: The Rate-Distortion-Perception Tradeoff](https://proceedings.mlr.press/v97/blau19a.html). *International Conference on Machine Learning*.
 - 2020\. Francesco Locatello et al. [Object-Centric Learning with Slot Attention](https://proceedings.neurips.cc/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html). *Advances in Neural Information Processing Systems*.
+
+## Public Hugging Face Models
+
+Each model is assigned to one or more collection sections. The tokenizer classification refers only to token formation, rather than to the foundation model that consumes the tokens.
+
+| Model | Collection Section | Tokenizer Classification | Sources |
+|---|---|---|---|
+| [Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2407.21783), [GitHub](https://github.com/meta-llama/llama-models) |
+| [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2412.15115), [GitHub](https://github.com/QwenLM/Qwen2.5) |
+| [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) | 1.1, 1.2, 1.8 | Hybrid; sequential neural-algorithmic tokenization | [Paper](https://arxiv.org/abs/2502.13923), [GitHub](https://github.com/QwenLM/Qwen2.5-VL) |
+| [LLaVA-1.5-7B](https://huggingface.co/llava-hf/llava-1.5-7b-hf) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2310.03744), [GitHub](https://github.com/haotian-liu/LLaVA) |
+| [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [GitHub](https://github.com/black-forest-labs/flux) |
+| [Stable Diffusion 3.5 Large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2403.03206), [GitHub](https://github.com/Stability-AI/sd3.5) |
+| [Whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 1.1, 1.3, 1.8 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2212.04356), [GitHub](https://github.com/openai/whisper) |
+| [EnCodec-32kHz](https://huggingface.co/facebook/encodec_32khz) | 1.3 | Neural; quantized latent tokens | [Paper](https://arxiv.org/abs/2210.13438), [GitHub](https://github.com/facebookresearch/encodec) |
+| [MusicGen-large](https://huggingface.co/facebook/musicgen-large) | 1.1, 1.3, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2306.05284), [GitHub](https://github.com/facebookresearch/audiocraft) |
+| [CogVideoX-5B](https://huggingface.co/zai-org/CogVideoX-5b) | 1.1, 1.2, 1.8 | Neural; continuous latent tokens | [Paper](https://arxiv.org/abs/2408.06072), [GitHub](https://github.com/THUDM/CogVideo) |
+| [StarCoder2-7B](https://huggingface.co/bigcode/starcoder2-7b) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2402.19173), [GitHub](https://github.com/bigcode-project/starcoder2) |
+| [SAM ViT-H](https://huggingface.co/facebook/sam-vit-huge) | 1.2 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2304.02643), [GitHub](https://github.com/facebookresearch/segment-anything) |
+| [TAPAS Base](https://huggingface.co/google/tapas-base) | 1.1, 1.5 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2004.02349), [GitHub](https://github.com/google-research/tapas) |
+| [Chronos-T5 Base](https://huggingface.co/amazon/chronos-t5-base) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2403.07815), [GitHub](https://github.com/amazon-science/chronos-forecasting) |
+| [FAST+](https://huggingface.co/physical-intelligence/fast) | 1.7 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2501.09747), [GitHub](https://github.com/Physical-Intelligence/openpi) |
+| [Sonata](https://huggingface.co/facebook/sonata) | 1.4 | Algorithmic; expert-defined composition | [Paper](https://arxiv.org/abs/2503.16429), [GitHub](https://github.com/facebookresearch/sonata) |
+| [TimesFM-2.5-200M](https://huggingface.co/google/timesfm-2.5-200m-pytorch) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2310.10688), [GitHub](https://github.com/google-research/timesfm) |
+| [Granite-TimeSeries-TTM-R2](https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2401.03955), [GitHub](https://github.com/ibm-granite/granite-tsfm) |
+| [Nucleotide Transformer v2 500M](https://huggingface.co/InstaDeepAI/nucleotide-transformer-v2-500m-multi-species) | 2.1 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41592-024-02523-z), [GitHub](https://github.com/instadeepai/nucleotide-transformer) |
+| [DNABERT-2-117M](https://huggingface.co/zhihan1996/DNABERT-2-117M) | 2.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2306.15006), [GitHub](https://github.com/MAGICS-LAB/DNABERT_2) |
+| [Evo-1.5-8K-base](https://huggingface.co/evo-design/evo-1.5-8k-base) | 2.1 | Algorithmic; predefined units | [Paper](https://www.science.org/doi/10.1126/science.ado9336), [GitHub](https://github.com/evo-design/evo) |
+| [RNA-FM](https://huggingface.co/multimolecule/rnafm) | 2.1 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2204.00300), [GitHub](https://github.com/ml4bio/RNA-FM) |
+| [Evo 2 40B](https://huggingface.co/arcinstitute/evo2_40b) | 2.1 | Algorithmic; predefined units | [Paper](https://doi.org/10.1038/s41586-026-10176-5), [GitHub](https://github.com/ArcInstitute/evo2) |
+| [ESM-2-650M](https://huggingface.co/facebook/esm2_t33_650M_UR50D) | 2.2 | Algorithmic; predefined units | [Paper](https://www.science.org/doi/10.1126/science.ade2574), [GitHub](https://github.com/facebookresearch/esm) |
+| [ProtT5-XL-UniRef50](https://huggingface.co/Rostlab/prot_t5_xl_uniref50) | 2.2 | Algorithmic; predefined units | [Paper](https://doi.org/10.1101/2020.07.12.199554), [GitHub](https://github.com/agemagician/ProtTrans) |
+| [ESM3-small-open-v1](https://huggingface.co/biohub/esm3-sm-open-v1) | 2.2 | Hybrid; composed tokenizer streams | [Paper](https://www.science.org/doi/10.1126/science.ads0018), [GitHub](https://github.com/Biohub/esm) |
+| [PepMLM-650M](https://huggingface.co/ChatterjeeLab/PepMLM-650M) | 2.2 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2310.03842), [GitHub](https://github.com/programmablebio/pepmlm) |
+| [ESMC-6B](https://huggingface.co/biohub/esmc-6b-2024-12) | 2.2 | Algorithmic; predefined units | [Paper](https://biohub.ai/papers/esm_protein.pdf), [GitHub](https://github.com/Biohub/esm) |
+| [SaProt-650M-AF2](https://huggingface.co/westlake-repl/SaProt_650M_AF2) | 2.2 | Hybrid; composed tokenizer streams | [Paper](https://openreview.net/forum?id=6MRm3G4NiU), [GitHub](https://github.com/westlake-repl/SaProt) |
+| [Boltz-2](https://huggingface.co/boltz-community/boltz-2) | 2.1, 2.2, 2.3 | Algorithmic; predefined units | [Paper](https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1.full), [GitHub](https://github.com/jwohlwend/boltz) |
+| [Boltz-1](https://huggingface.co/boltz-community/boltz-1) | 2.1, 2.2, 2.3 | Algorithmic; predefined units | [Paper](https://www.biorxiv.org/content/10.1101/2024.11.19.624167v4), [GitHub](https://github.com/jwohlwend/boltz) |
+| [Chai-1](https://huggingface.co/chaidiscovery/chai-1) | 2.1, 2.2, 2.3 | Algorithmic; predefined units | [Paper](https://www.biorxiv.org/content/10.1101/2024.10.10.615955v2), [GitHub](https://github.com/chaidiscovery/chai-lab) |
+| [Protenix](https://huggingface.co/OneScience-Group/protenix) | 2.1, 2.2, 2.3 | Algorithmic; predefined units | [Paper](https://openreview.net/forum?id=rdupZxS99R), [GitHub](https://github.com/bytedance/Protenix) |
+| [MoLFormer-XL-both-10pct](https://huggingface.co/ibm-research/MoLFormer-XL-both-10pct) | 2.3 | Algorithmic; expert-defined composition | [Paper](https://www.nature.com/articles/s42256-022-00580-7), [GitHub](https://github.com/IBM/molformer) |
+| [UltraNMR](https://huggingface.co/milesyc/ultranmr) | 2.3, 2.5 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2606.20756), [GitHub](https://github.com/wuycM/UltraNMR) |
+| [MatterGen](https://huggingface.co/microsoft/mattergen) | 2.4 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41586-025-08628-5), [GitHub](https://github.com/microsoft/mattergen) |
+| [UMA](https://huggingface.co/facebook/UMA) | 2.3, 2.4 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2506.23971), [GitHub](https://github.com/facebookresearch/fairchem) |
+| [UNI](https://huggingface.co/MahmoodLab/UNI) | 2.6 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41591-024-02857-3), [GitHub](https://github.com/mahmoodlab/UNI) |
+| [MedGemma-1.5-4B-IT](https://huggingface.co/google/medgemma-1.5-4b-it) | 2.6 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2604.05081), [GitHub](https://github.com/Google-Health/medgemma) |
+| [Prov-GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) | 2.6 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41586-024-07441-w), [GitHub](https://github.com/prov-gigapath/prov-gigapath) |
+| [Virchow2](https://huggingface.co/paige-ai/Virchow2) | 2.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2408.00738) |
+| [H-optimus-1](https://huggingface.co/bioptimus/H-optimus-1) | 2.6 | Algorithmic; predefined units | [Paper](https://doi.org/10.1158/1538-7445.AM2026-LB174) |
+| [Geneformer](https://huggingface.co/ctheodoris/Geneformer) | 2.7 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41586-023-06139-9) |
+| [STATE SE-600M](https://huggingface.co/arcinstitute/SE-600M) | 2.7 | Algorithmic; predefined units | [Paper](https://doi.org/10.1016/j.cell.2026.07.052), [GitHub](https://github.com/ArcInstitute/state) |
+| [Stack-Large-Aligned](https://huggingface.co/arcinstitute/Stack-Large-Aligned) | 2.7 | Algorithmic; predefined units | [Paper](https://doi.org/10.64898/2026.01.09.698608), [GitHub](https://github.com/ArcInstitute/stack) |
+| [Prithvi-EO-2.0-300M](https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M) | 2.9 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2412.02732), [GitHub](https://github.com/NASA-IMPACT/Prithvi-EO-2.0) |
+| [Aurora](https://huggingface.co/microsoft/aurora) | 2.9 | Algorithmic; predefined units | [Paper](https://www.nature.com/articles/s41586-025-09005-y), [GitHub](https://github.com/microsoft/aurora) |
+| [TerraMind-1.0-base](https://huggingface.co/ibm-esa-geospatial/TerraMind-1.0-base) | 2.9 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2504.11171), [GitHub](https://github.com/IBM/terramind) |
+| [Prithvi-WxC-1.0-2300M](https://huggingface.co/ibm-nasa-geospatial/Prithvi-WxC-1.0-2300M) | 2.9 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2409.13598), [GitHub](https://github.com/NASA-IMPACT/Prithvi-WxC) |
+| [TxGemma-2B-predict](https://huggingface.co/google/txgemma-2b-predict) | 2.1, 2.2, 2.3 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2504.06196), [GitHub](https://github.com/google-gemini/gemma-cookbook/tree/main/TxGemma) |
 
 ## Contributing
 
