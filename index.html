@@ -167,7 +167,7 @@
 <main class="tcx" id="tokenizer-method-explorer">
   <header>
     <h1>Tokenizer Systems in Foundation Models: Taxonomy, Classification, and Designs</h1>
-    <p class="sub">A tokenizer-specific study of 355 paper records and 81 public model profiles. Record type, implementation basis, method family, tokenizer completeness, modality, and domain object are separate classification dimensions.</p>
+    <p class="sub">A tokenizer-specific study of 355 paper records and 81 public model profiles. AI modality describes how information is represented, while domain object describes what is represented. World models and multimodal systems are treated as cross-cutting topics.</p>
     <p class="meta">Literature cutoff: September 6, 2026 · Click any paper title to open its primary source.</p>
   </header>
   <nav class="view-switch switch" aria-label="Choose section">
@@ -527,9 +527,21 @@
   });
   const nucleotideTransformer=data.find(item=>item.title.startsWith("The Nucleotide Transformer:"));
   if(nucleotideTransformer){nucleotideTransformer.year=2025;nucleotideTransformer.title="Nucleotide Transformer: Building and Evaluating Robust Foundation Models for Human Genomics";nucleotideTransformer.link="https://www.nature.com/articles/s41592-024-02523-z";nucleotideTransformer.venue="Nature Methods";}
+  const worldModelTitles=new Set(["Mastering Atari with Discrete World Models","Video Generation Models as World Simulators","Genie: Generative Interactive Environments","iVideoGPT: Interactive VideoGPTs Are Scalable World Models","Cosmos World Foundation Model Platform for Physical AI"]);
+  const robotTokenizerTitles=new Set(["PRISE: LLM-Style Sequence Compression for Learning Temporal Action Abstractions in Control","FAST: Efficient Action Tokenization for Vision-Language-Action Models"]);
+  data.forEach(item=>{
+    if(worldModelTitles.has(item.title)){
+      item.catalog_section="World Models and Latent State Tokenization";
+      if(item.title==="Video Generation Models as World Simulators")item.data_object="Visual environment (video)";
+    }
+    else if(robotTokenizerTitles.has(item.title)){item.catalog_section="Robots and Embodied Systems";item.data_object="Robot (action sequence)";}
+    else if(item.catalog_section==="Time Series, Physical Fields, and World Models")item.catalog_section="Time Series";
+  });
+  const soraProfile=frontier.find(item=>item.model_family==="Sora");
+  if(soraProfile)soraProfile.data_object="Visual environment (video)";
   const overviewRecords=[...data.filter(x=>["Algorithmic","Neural","Hybrid"].includes(x.implementation_basis)&&!x.organization),...frontier];
   const hfModalityCoverage=["Text","Image","Video","Audio","Graph","Sequence","Geometry","Field","Time series","Spectrum","Table","Set","Numeric signal"];
-  const hfDataObjectCoverage=["Robot (action sequence)","Earth surface (image sequence)","Atmosphere (spatiotemporal field)","Small molecule (string)","Small molecule (graph)","Small molecule (3D)","Small molecule (NMR spectrum)","Crystal (graph)","Crystal (3D)","DNA (sequence)","RNA (sequence)","Protein (sequence)","Protein (3D)","Peptide (sequence)","Cell (gene-expression profile)","Tissue (image)","Clinical case (image)","3D scene (geometry)"];
+  const hfDataObjectCoverage=["Robot (action sequence)","Interactive environment (video)","Visual environment (video)","Physical environment (video)","Earth surface (image sequence)","Atmosphere (spatiotemporal field)","Small molecule (string)","Small molecule (graph)","Small molecule (3D)","Small molecule (NMR spectrum)","Crystal (graph)","Crystal (3D)","DNA (sequence)","RNA (sequence)","Protein (sequence)","Protein (3D)","Peptide (sequence)","Cell (gene-expression profile)","Tissue (image)","Clinical case (image)","3D scene (geometry)"];
   const classes=["Algorithmic", "Neural", "Hybrid", "Not applicable", "Not disclosed"];
   const colors={"Algorithmic":"var(--alg)","Neural":"var(--neural)","Hybrid":"var(--hybrid)","Not applicable":"var(--na)","Not disclosed":"var(--undisclosed)"};
   const keyClass=s=>s==="Not applicable"?"NotApplicable":s==="Not disclosed"?"NotDisclosed":s;

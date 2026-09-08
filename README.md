@@ -16,9 +16,7 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - [1.3 Audio and Speech](#13-audio-and-speech)
 - [1.4 Point Clouds and Three-Dimensional Structure](#14-point-clouds-and-three-dimensional-structure)
 - [1.5 Graphs and Tables](#15-graphs-and-tables)
-- [1.6 Time Series, Physical Fields, and Latent World States](#16-time-series-physical-fields-and-latent-world-states)
-- [1.7 Robot Actions and Embodied Trajectory](#17-robot-actions-and-embodied-trajectory)
-- [1.8 Multimodal Token Systems](#18-multimodal-token-systems)
+- [1.6 Time Series](#16-time-series)
 - [2.1 DNA and RNA](#21-dna-and-rna)
 - [2.2 Proteins and Peptides](#22-proteins-and-peptides)
 - [2.3 Molecules and Reactions](#23-molecules-and-reactions)
@@ -28,8 +26,12 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - [2.7 Omics and Cells](#27-omics-and-cells)
 - [2.8 Physical Fields and Simulations](#28-physical-fields-and-simulations)
 - [2.9 Earth System Observations](#29-earth-system-observations)
-- [Public Hugging Face Models](#public-hugging-face-models)
+- [2.10 Robots and Embodied Systems](#210-robots-and-embodied-systems)
+- [2.11 Environments](#211-environments)
 - [3. Theoretical and Method Foundations for Future Tokenizers](#3-theoretical-and-method-foundations-for-future-tokenizers)
+- [4. World Models and Latent State Tokenization](#4-world-models-and-latent-state-tokenization)
+- [5. Public Hugging Face Models](#5-public-hugging-face-models)
+- [6. Multimodal Token Systems](#6-multimodal-token-systems)
 - [Contributing](#contributing)
 
 ## 0. Cross-Cutting Foundations, Surveys, and Evaluation
@@ -108,6 +110,7 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 ## 1.2 Images and Video
 
 - 2019\. A. Razavi, A. V. D. Oord, et al. [Generating diverse high-fidelity images with vq-vae-2](https://arxiv.org/abs/1906.00446). *NeurIPS*.
+- 2020\. Danijar Hafner et al. [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193). *ICLR 2021*.
 - 2021\. Aditya Ramesh et al. [Zero-Shot Text-to-Image Generation](https://proceedings.mlr.press/v139/ramesh21a.html). *ICML*.
 - 2021\. Alexey Dosovitskiy et al. [An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy). *International Conference on Learning Representations*.
 - 2021\. Anurag Arnab et al. [ViViT: A Video Vision Transformer](https://arxiv.org/abs/2103.15691). *International Conference on Computer Vision*.
@@ -134,6 +137,9 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - 2024\. K. Tian, Y. Jiang, et al. [Visual autoregressive modeling: Scalable image generation via next-scale prediction](https://proceedings.neurips.cc/paper_files/paper/2024/hash/9a24e284b187f662681440ba15c416fb-Abstract-Conference.html). *NeurIPS*.
 - 2024\. Lijun Yu et al. [Language Model Beats Diffusion: Tokenizer Is Key to Visual Generation](https://openreview.net/forum?id=gzqrANCF4g). *ICLR*.
 - 2024\. Meta Movie Gen Team. [Movie Gen: A Cast of Media Foundation Models](https://arxiv.org/abs/2410.13720). *arXiv preprint arXiv:2410.13720*.
+- 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
+- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
+- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
 - 2024\. Q. Yu, M. Weber, et al. [An image is worth 32 tokens for reconstruction and generation](https://proceedings.neurips.cc/paper_files/paper/2024/hash/e91bf7dfba0477554994c6d64833e9d8-Abstract-Conference.html). *NeurIPS*.
 - 2024\. Ritwik Gupta, Shufan Li, Tyler Zhu, Jitendra Malik, Trevor Darrell, and Karttikeya Mangalam. [xT: Nested Tokenization for Larger Context in Large Images](https://proceedings.mlr.press/v235/gupta24b.html). *International Conference on Machine Learning*.
 - 2024\. Weijie Kong et al. [HunyuanVideo: A Systematic Framework for Large Video Generative Models](https://arxiv.org/abs/2412.03603). *arXiv preprint arXiv:2412.03603*.
@@ -152,6 +158,7 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - 2025\. Kyle Sargent, Kyle Hsu, Justin Johnson, Li Fei-Fei, and Jiajun Wu. [Flow to the Mode: Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](https://openaccess.thecvf.com/content/ICCV2025/html/Sargent_Flow_to_the_Mode_Mode-Seeking_Diffusion_Autoencoders_for_State-of-the-Art_Image_ICCV_2025_paper.html). *ICCV*.
 - 2025\. Lijun Qu et al. [TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](https://openaccess.thecvf.com/content/CVPR2025/html/Qu_TokenFlow_Unified_Image_Tokenizer_for_Multimodal_Understanding_and_Generation_CVPR_2025_paper.html). *CVPR*.
 - 2025\. Lingfeng Wang et al. [ALTo: Adaptive-Length Tokenizer for Autoregressive Mask Generation](https://proceedings.neurips.cc/paper_files/paper/2025/hash/17a9ab4190289f0e1504bbb98d1d111a-Abstract-Conference.html). *NeurIPS*.
+- 2025\. NVIDIA. [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575). *arXiv preprint arXiv:2501.03575*.
 - 2025\. Long Zhao et al. [Epsilon-VAE: Denoising as Visual Decoding](https://proceedings.mlr.press/v267/zhao25w.html). *International Conference on Machine Learning*.
 - 2025\. Minghao Yang, Zechen Bai, Jing Lin, Haoqian Wang, and Alex Jinpeng Wang. [VaporTok: RL-Driven Adaptive Video Tokenizer with Prior and Task Awareness](https://proceedings.neurips.cc/paper_files/paper/2025/hash/43e41fa7544d2ee435c72305702de61f-Abstract-Conference.html). *NeurIPS*.
 - 2025\. Philippe Hansen-Estruch et al. [Learnings from Scaling Visual Tokenizers for Reconstruction and Generation](https://arxiv.org/abs/2501.09755). *arXiv*.
@@ -217,57 +224,15 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - 2025\. Zehong Wang, Zheyuan Zhang, Tianyi Ma, Chuxu Zhang, and Yanfang Ye. [Generative Graph Pattern Machine](https://proceedings.neurips.cc/paper_files/paper/2025/file/2b22bacd7ad8677f4837b28a11fe496f-Paper-Conference.pdf). *NeurIPS*.
 - 2026\. Zeyuan Guo, Enmao Diao, Cheng Yang, and Chuan Shi. [Graph Tokenization for Bridging Graphs and Transformers](https://proceedings.iclr.cc/paper_files/paper/2026/hash/2c0781f2ed2d8054d4f27a19bd8c380b-Abstract-Conference.html). *International Conference on Learning Representations*.
 
-## 1.6 Time Series, Physical Fields, and Latent World States
+## 1.6 Time Series
 
 - 2003\. Jessica Lin, Eamonn Keogh, Stefano Lonardi, and Bill Chiu. [A Symbolic Representation of Time Series, with Implications for Streaming Algorithms](https://doi.org/10.1145/882082.882086). *ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery*.
-- 2020\. Danijar Hafner et al. [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193). *ICLR 2021*.
 - 2023\. Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, and Jayant Kalagnanam. [A Time Series Is Worth 64 Words: Long-Term Forecasting with Transformers](https://openreview.net/forum?id=Jbdc0vTOcol). *ICLR*.
 - 2024\. Abdul Fatir Ansari et al. [Chronos: Learning the Language of Time Series](https://arxiv.org/abs/2403.07815). *arXiv preprint arXiv:2403.07815*.
 - 2024\. Abhimanyu Das et al. [A Decoder-Only Foundation Model for Time-Series Forecasting](https://arxiv.org/abs/2310.10688). *arXiv preprint arXiv:2310.10688*.
 - 2024\. Vijay Ekambaram et al. [Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series](https://arxiv.org/abs/2401.03955). *arXiv preprint arXiv:2401.03955*.
 - 2024\. Mononito Goswami et al. [MOMENT: A Family of Open Time-Series Foundation Models](https://proceedings.mlr.press/v235/goswami24a.html). *ICML*.
-- 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
 - 2025\. Luca Masserano et al. [Enhancing Foundation Models for Time Series Forecasting via Wavelet-Based Tokenization](https://proceedings.mlr.press/v267/masserano25a.html). *ICML*.
-
-## 1.7 Robot Actions and Embodied Trajectory
-
-- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
-- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
-- 2024\. Ruijie Zheng, Ching-An Cheng, Hal Daumé III, Furong Huang, and Andrey Kolobov. [PRISE: LLM-Style Sequence Compression for Learning Temporal Action Abstractions in Control](https://proceedings.mlr.press/v235/zheng24b.html). *ICML*.
-- 2025\. Karl Pertsch et al. [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747). *arXiv*.
-- 2025\. NVIDIA. [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575). *arXiv preprint arXiv:2501.03575*.
-
-## 1.8 Multimodal Token Systems
-
-- 2021\. Andrew Jaegle et al. [Perceiver: General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html). *International Conference on Machine Learning*.
-- 2022\. Jean-Baptiste Alayrac et al. [Flamingo: A Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198). *arXiv preprint arXiv:2204.14198*.
-- 2023\. David Mizrahi, Roman Bachmann, Oğuzhan Fatih Kar, Teresa Yeo, Mingfei Gao, Afshin Dehghan, and Amir Zamir. [4M: Massively Multimodal Masked Modeling](https://proceedings.neurips.cc/paper_files/paper/2023/hash/b6446566965fa38e183650728ab70318-Abstract-Conference.html). *NeurIPS*.
-- 2023\. Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485). *NeurIPS*.
-- 2023\. Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://proceedings.mlr.press/v202/li23q.html). *ICML*.
-- 2023\. Jade Copet et al. [Simple and Controllable Music Generation](https://arxiv.org/abs/2306.05284). *Advances in Neural Information Processing Systems*.
-- 2023\. OpenAI. [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774). *arXiv preprint arXiv:2303.08774*.
-- 2024\. Amazon Artificial General Intelligence. [The Amazon Nova Family of Models: Technical Report and Model Card](https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card). *Amazon Technical Reports*.
-- 2024\. Anthropic. [The Claude 3 Model Family: Opus, Sonnet, Haiku](https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf). *Anthropic Model Card*.
-- 2024\. Brandon McKinzie et al. [MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611). *arXiv preprint arXiv:2403.09611*.
-- 2024\. Haotian Liu et al. [Improved Baselines with Visual Instruction Tuning](https://arxiv.org/abs/2310.03744). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
-- 2024\. Patrick Esser et al. [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2403.03206). *International Conference on Machine Learning*.
-- 2024\. Alec Radford et al. [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356). *International Conference on Machine Learning*.
-- 2024\. Gemini Team. [Gemini 1.5: Unlocking Multimodal Understanding across Millions of Tokens of Context](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf). *Google DeepMind Technical Report*.
-- 2024\. J. Lu, C. Clark, et al. [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](https://openaccess.thecvf.com/content/CVPR2024/html/Lu_Unified-IO_2_Scaling_Autoregressive_Multimodal_Models_with_Vision_Language_Audio_CVPR_2024_paper.html). *CVPR*.
-- 2024\. J. Zhan, J. Dai, et al. [AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling](https://aclanthology.org/2024.acl-long.521/). *ACL*.
-- 2024\. Microsoft. [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219). *arXiv preprint arXiv:2404.14219*.
-- 2024\. Peng Wang et al. [Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution](https://arxiv.org/abs/2409.12191). *arXiv preprint arXiv:2409.12191*.
-- 2024\. Roman Bachmann et al. [4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities](https://proceedings.neurips.cc/paper_files/paper/2024/hash/71883294314045d60c900113a359934b-Abstract-Conference.html). *NeurIPS*.
-- 2024\. Zhuoyi Yang et al. [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072). *arXiv preprint arXiv:2408.06072*.
-- 2024\. Shengbang Tong et al. [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860). *NeurIPS*.
-- 2024\. Shukang Yin et al. [A Survey on Multimodal Large Language Models](https://doi.org/10.1093/nsr/nwae403). *National Science Review*.
-- 2024\. Team, Chameleon. [Chameleon: Mixed-modal early-fusion foundation models](https://arxiv.org/abs/2405.09818). *arXiv*.
-- 2024\. Y. Jin, K. Xu, et al. [Unified Language-Vision Pretraining in LLM with Dynamic Discrete Visual Tokenization](https://openreview.net/forum?id=Y1yARvAjc7). *ICLR*.
-- 2024\. Yunze Ge et al. [SEED: Planting a SEED of Vision in Large Language Model](https://openreview.net/forum?id=lmCh0aACLi). *ICLR*.
-- 2025\. Baidu ERNIE Team. [ERNIE 4.5 Technical Report](https://ernie.baidu.com/blog/publication/ERNIE_Technical_Report.pdf). *Baidu Technical Report*.
-- 2025\. Gemma Team. [Gemma 3 Technical Report](https://arxiv.org/abs/2503.19786). *arXiv preprint arXiv:2503.19786*.
-- 2025\. Qwen Team. [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923). *arXiv preprint arXiv:2502.13923*.
-- 2025\. Seed Team. [Seed1.5-VL Technical Report](https://arxiv.org/abs/2505.07062). *arXiv preprint arXiv:2505.07062*.
 
 ## 2.1 DNA and RNA
 
@@ -446,6 +411,21 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - 2024\. Johannes Schmude et al. [Prithvi WxC: Foundation Model for Weather and Climate](https://arxiv.org/abs/2409.13598). *arXiv preprint arXiv:2409.13598*.
 - 2025\. Johannes Jakubik et al. [TerraMind: Large-Scale Generative Multimodality for Earth Observation](https://arxiv.org/abs/2504.11171). *arXiv preprint arXiv:2504.11171*.
 
+## 2.10 Robots and Embodied Systems
+
+- 2024\. Ruijie Zheng, Ching-An Cheng, Hal Daumé III, Furong Huang, and Andrey Kolobov. [PRISE: LLM-Style Sequence Compression for Learning Temporal Action Abstractions in Control](https://proceedings.mlr.press/v235/zheng24b.html). *ICML*.
+- 2025\. Karl Pertsch et al. [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747). *arXiv*.
+
+## 2.11 Environments
+
+This section covers interactive, visual, and physical environments represented through images, video, actions, or learned states.
+
+- 2020\. Danijar Hafner et al. [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193). *ICLR 2021*.
+- 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
+- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
+- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
+- 2025\. NVIDIA. [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575). *arXiv preprint arXiv:2501.03575*.
+
 ## 3. Theoretical and Method Foundations for Future Tokenizers
 
 > This section records papers that define useful criteria for tokenizers and earlier methods that can form units, even when the authors did not use the term *tokenizer*.
@@ -471,7 +451,17 @@ The current release contains 355 unique literature records and 81 frontier-lab o
 - 2019\. Yochai Blau and Tomer Michaeli. [Rethinking Lossy Compression: The Rate-Distortion-Perception Tradeoff](https://proceedings.mlr.press/v97/blau19a.html). *International Conference on Machine Learning*.
 - 2020\. Francesco Locatello et al. [Object-Centric Learning with Slot Attention](https://proceedings.neurips.cc/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html). *Advances in Neural Information Processing Systems*.
 
-## Public Hugging Face Models
+## 4. World Models and Latent State Tokenization
+
+This section groups systems that encode observations into learned or compressed states for prediction, simulation, or interaction. These states are model representations rather than input modalities.
+
+- 2020\. Danijar Hafner et al. [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193). *ICLR 2021*.
+- 2024\. OpenAI. [Video Generation Models as World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). *OpenAI Technical Report*.
+- 2024\. Jake Bruce et al. [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391). *arXiv*.
+- 2024\. Jialong Wu, Shaofeng Yin, Ningya Feng, Xu He, Dong Li, Jianye Hao, and Mingsheng Long. [iVideoGPT: Interactive VideoGPTs Are Scalable World Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/7dbb5bfab324e3b86af9bd0df15498dd-Abstract-Conference.html). *NeurIPS*.
+- 2025\. NVIDIA. [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575). *arXiv preprint arXiv:2501.03575*.
+
+## 5. Public Hugging Face Models
 
 Each model is assigned to one or more collection sections. The tokenizer classification refers only to token formation, rather than to the foundation model that consumes the tokens.
 
@@ -479,19 +469,19 @@ Each model is assigned to one or more collection sections. The tokenizer classif
 |---|---|---|---|
 | [Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2407.21783), [GitHub](https://github.com/meta-llama/llama-models) |
 | [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2412.15115), [GitHub](https://github.com/QwenLM/Qwen2.5) |
-| [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) | 1.1, 1.2, 1.8 | Hybrid; sequential neural-algorithmic tokenization | [Paper](https://arxiv.org/abs/2502.13923), [GitHub](https://github.com/QwenLM/Qwen2.5-VL) |
-| [LLaVA-1.5-7B](https://huggingface.co/llava-hf/llava-1.5-7b-hf) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2310.03744), [GitHub](https://github.com/haotian-liu/LLaVA) |
-| [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [GitHub](https://github.com/black-forest-labs/flux) |
-| [Stable Diffusion 3.5 Large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) | 1.1, 1.2, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2403.03206), [GitHub](https://github.com/Stability-AI/sd3.5) |
-| [Whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 1.1, 1.3, 1.8 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2212.04356), [GitHub](https://github.com/openai/whisper) |
+| [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) | 1.1, 1.2, 6 | Hybrid; sequential neural-algorithmic tokenization | [Paper](https://arxiv.org/abs/2502.13923), [GitHub](https://github.com/QwenLM/Qwen2.5-VL) |
+| [LLaVA-1.5-7B](https://huggingface.co/llava-hf/llava-1.5-7b-hf) | 1.1, 1.2, 6 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2310.03744), [GitHub](https://github.com/haotian-liu/LLaVA) |
+| [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) | 1.1, 1.2, 6 | Hybrid; composed tokenizer streams | [GitHub](https://github.com/black-forest-labs/flux) |
+| [Stable Diffusion 3.5 Large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large) | 1.1, 1.2, 6 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2403.03206), [GitHub](https://github.com/Stability-AI/sd3.5) |
+| [Whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | 1.1, 1.3, 6 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2212.04356), [GitHub](https://github.com/openai/whisper) |
 | [EnCodec-32kHz](https://huggingface.co/facebook/encodec_32khz) | 1.3 | Neural; quantized latent tokens | [Paper](https://arxiv.org/abs/2210.13438), [GitHub](https://github.com/facebookresearch/encodec) |
-| [MusicGen-large](https://huggingface.co/facebook/musicgen-large) | 1.1, 1.3, 1.8 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2306.05284), [GitHub](https://github.com/facebookresearch/audiocraft) |
-| [CogVideoX-5B](https://huggingface.co/zai-org/CogVideoX-5b) | 1.1, 1.2, 1.8 | Neural; continuous latent tokens | [Paper](https://arxiv.org/abs/2408.06072), [GitHub](https://github.com/THUDM/CogVideo) |
+| [MusicGen-large](https://huggingface.co/facebook/musicgen-large) | 1.1, 1.3, 6 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2306.05284), [GitHub](https://github.com/facebookresearch/audiocraft) |
+| [CogVideoX-5B](https://huggingface.co/zai-org/CogVideoX-5b) | 1.1, 1.2, 6 | Neural; continuous latent tokens | [Paper](https://arxiv.org/abs/2408.06072), [GitHub](https://github.com/THUDM/CogVideo) |
 | [StarCoder2-7B](https://huggingface.co/bigcode/starcoder2-7b) | 1.1 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2402.19173), [GitHub](https://github.com/bigcode-project/starcoder2) |
 | [SAM ViT-H](https://huggingface.co/facebook/sam-vit-huge) | 1.2 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2304.02643), [GitHub](https://github.com/facebookresearch/segment-anything) |
 | [TAPAS Base](https://huggingface.co/google/tapas-base) | 1.1, 1.5 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2004.02349), [GitHub](https://github.com/google-research/tapas) |
 | [Chronos-T5 Base](https://huggingface.co/amazon/chronos-t5-base) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2403.07815), [GitHub](https://github.com/amazon-science/chronos-forecasting) |
-| [FAST+](https://huggingface.co/physical-intelligence/fast) | 1.7 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2501.09747), [GitHub](https://github.com/Physical-Intelligence/openpi) |
+| [FAST+](https://huggingface.co/physical-intelligence/fast) | 2.10 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2501.09747), [GitHub](https://github.com/Physical-Intelligence/openpi) |
 | [Sonata](https://huggingface.co/facebook/sonata) | 1.4 | Algorithmic; expert-defined composition | [Paper](https://arxiv.org/abs/2503.16429), [GitHub](https://github.com/facebookresearch/sonata) |
 | [TimesFM-2.5-200M](https://huggingface.co/google/timesfm-2.5-200m-pytorch) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2310.10688), [GitHub](https://github.com/google-research/timesfm) |
 | [Granite-TimeSeries-TTM-R2](https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2) | 1.6 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2401.03955), [GitHub](https://github.com/ibm-granite/granite-tsfm) |
@@ -527,6 +517,38 @@ Each model is assigned to one or more collection sections. The tokenizer classif
 | [TerraMind-1.0-base](https://huggingface.co/ibm-esa-geospatial/TerraMind-1.0-base) | 2.9 | Hybrid; composed tokenizer streams | [Paper](https://arxiv.org/abs/2504.11171), [GitHub](https://github.com/IBM/terramind) |
 | [Prithvi-WxC-1.0-2300M](https://huggingface.co/ibm-nasa-geospatial/Prithvi-WxC-1.0-2300M) | 2.9 | Algorithmic; predefined units | [Paper](https://arxiv.org/abs/2409.13598), [GitHub](https://github.com/NASA-IMPACT/Prithvi-WxC) |
 | [TxGemma-2B-predict](https://huggingface.co/google/txgemma-2b-predict) | 2.1, 2.2, 2.3 | Algorithmic; data-learned composition | [Paper](https://arxiv.org/abs/2504.06196), [GitHub](https://github.com/google-gemini/gemma-cookbook/tree/main/TxGemma) |
+
+## 6. Multimodal Token Systems
+
+- 2021\. Andrew Jaegle et al. [Perceiver: General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html). *International Conference on Machine Learning*.
+- 2022\. Jean-Baptiste Alayrac et al. [Flamingo: A Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198). *arXiv preprint arXiv:2204.14198*.
+- 2023\. David Mizrahi, Roman Bachmann, Oğuzhan Fatih Kar, Teresa Yeo, Mingfei Gao, Afshin Dehghan, and Amir Zamir. [4M: Massively Multimodal Masked Modeling](https://proceedings.neurips.cc/paper_files/paper/2023/hash/b6446566965fa38e183650728ab70318-Abstract-Conference.html). *NeurIPS*.
+- 2023\. Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485). *NeurIPS*.
+- 2023\. Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://proceedings.mlr.press/v202/li23q.html). *ICML*.
+- 2023\. Jade Copet et al. [Simple and Controllable Music Generation](https://arxiv.org/abs/2306.05284). *Advances in Neural Information Processing Systems*.
+- 2023\. OpenAI. [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774). *arXiv preprint arXiv:2303.08774*.
+- 2024\. Amazon Artificial General Intelligence. [The Amazon Nova Family of Models: Technical Report and Model Card](https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card). *Amazon Technical Reports*.
+- 2024\. Anthropic. [The Claude 3 Model Family: Opus, Sonnet, Haiku](https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf). *Anthropic Model Card*.
+- 2024\. Brandon McKinzie et al. [MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611). *arXiv preprint arXiv:2403.09611*.
+- 2024\. Haotian Liu et al. [Improved Baselines with Visual Instruction Tuning](https://arxiv.org/abs/2310.03744). *IEEE/CVF Conference on Computer Vision and Pattern Recognition*.
+- 2024\. Patrick Esser et al. [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2403.03206). *International Conference on Machine Learning*.
+- 2024\. Alec Radford et al. [Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356). *International Conference on Machine Learning*.
+- 2024\. Gemini Team. [Gemini 1.5: Unlocking Multimodal Understanding across Millions of Tokens of Context](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf). *Google DeepMind Technical Report*.
+- 2024\. J. Lu, C. Clark, et al. [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](https://openaccess.thecvf.com/content/CVPR2024/html/Lu_Unified-IO_2_Scaling_Autoregressive_Multimodal_Models_with_Vision_Language_Audio_CVPR_2024_paper.html). *CVPR*.
+- 2024\. J. Zhan, J. Dai, et al. [AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling](https://aclanthology.org/2024.acl-long.521/). *ACL*.
+- 2024\. Microsoft. [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219). *arXiv preprint arXiv:2404.14219*.
+- 2024\. Peng Wang et al. [Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution](https://arxiv.org/abs/2409.12191). *arXiv preprint arXiv:2409.12191*.
+- 2024\. Roman Bachmann et al. [4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities](https://proceedings.neurips.cc/paper_files/paper/2024/hash/71883294314045d60c900113a359934b-Abstract-Conference.html). *NeurIPS*.
+- 2024\. Zhuoyi Yang et al. [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072). *arXiv preprint arXiv:2408.06072*.
+- 2024\. Shengbang Tong et al. [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860). *NeurIPS*.
+- 2024\. Shukang Yin et al. [A Survey on Multimodal Large Language Models](https://doi.org/10.1093/nsr/nwae403). *National Science Review*.
+- 2024\. Chameleon Team. [Chameleon: Mixed-Modal Early-Fusion Foundation Models](https://arxiv.org/abs/2405.09818). *arXiv*.
+- 2024\. Y. Jin, K. Xu, et al. [Unified Language-Vision Pretraining in LLM with Dynamic Discrete Visual Tokenization](https://openreview.net/forum?id=Y1yARvAjc7). *ICLR*.
+- 2024\. Yunze Ge et al. [SEED: Planting a SEED of Vision in Large Language Model](https://openreview.net/forum?id=lmCh0aACLi). *ICLR*.
+- 2025\. Baidu ERNIE Team. [ERNIE 4.5 Technical Report](https://ernie.baidu.com/blog/publication/ERNIE_Technical_Report.pdf). *Baidu Technical Report*.
+- 2025\. Gemma Team. [Gemma 3 Technical Report](https://arxiv.org/abs/2503.19786). *arXiv preprint arXiv:2503.19786*.
+- 2025\. Qwen Team. [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923). *arXiv preprint arXiv:2502.13923*.
+- 2025\. Seed Team. [Seed1.5-VL Technical Report](https://arxiv.org/abs/2505.07062). *arXiv preprint arXiv:2505.07062*.
 
 ## Contributing
 
