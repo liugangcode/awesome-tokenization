@@ -2,15 +2,13 @@
 
 <!-- A collection for **What Should Count as a Token?**, a comprehensive study of tokenization and data representation across foundation models and scientific data. -->
 
-The collection tracks methods that form, merge, quantize, or study model units or tokens. It separates the tokenizer from the foundation model that consumes its output.
-
-The catalog classifies each record by modality, domain object, and complex-system setting.
+The collection tracks methods that form, merge, quantize, or study model units or tokens. It separates the tokenizer from the foundation model that consumes its output. The catalog classifies each record by modality, domain object, and complex-system setting.
 
 When a tokenizer covers several representations or objects, the paper appears in different sections. A single listing is the paper's primary location. For a cross-listed paper, the `primary` label identifies its main contribution, and each copy links to the other locations.
 
-The main lists favor work that introduces or directly evaluates tokenization. 
+<!-- The main lists favor work that introduces or directly evaluates tokenization.  -->
 
-The current release contains 347 unique literature records and 81 frontier-lab or public models.
+<!-- The current release contains 347 unique literature records and 81 frontier-lab or public models. -->
 
 <!-- Cutoff: September 6, 2026. -->
 
