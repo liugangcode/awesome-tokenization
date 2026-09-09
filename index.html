@@ -541,6 +541,7 @@
   ]);
   const biomolecularSystemNames=new Set(["Bio2Token: All-Atom Tokenization of Any Biomolecular Structure with Mamba","Accurate Structure Prediction of Biomolecular Interactions with AlphaFold 3","Full-Atom Peptide Design based on Multi-modal Flow Matching","Full-Atom Peptide Design with Geometric Latent Diffusion","PPFLOW: Target-Aware Peptide Design with Torsional Flow Matching","Chai-1: Decoding the Molecular Interactions of Life","Boltz-1: Democratizing Biomolecular Interaction Modeling","Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction","Protenix: Advancing Structure Prediction Through a Comprehensive AlphaFold3 Reproduction","Learning Molecular Representation in a Cell","Contextual AI Models for Single-Cell Protein Biology","A Multimodal Foundation Model for Protein Phenotypes","scGPT: Toward Building a Foundation Model for Single-Cell Multi-Omics Using Generative AI","How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities","Universal Cell Embedding Provides a Foundation Model for Cell Biology","TxGemma: Efficient and Agentic LLMs for Therapeutics","Generalized Biological Foundation Model with Unified Nucleic Acid and Protein Language","Boltz-2","Boltz-1","Chai-1","Protenix","TxGemma-2B-predict"]);
   const dynamicSections=new Set(["World Models and Latent State Tokenization","World Models, Simulation, and Embodied Interaction","World Models and Embodied Interaction","World Models and Interactive Environments"]);
+  const explicitTextSystems=new Set(["A New Algorithm for Data Compression","TxGemma: Efficient and Agentic LLMs for Therapeutics","TxGemma-2B-predict"]);
   const terms=value=>String(value).split(";").map(x=>x.trim()).filter(Boolean);
   const normalizeModality=term=>({"Geometry":"Three-dimensional geometry","Field":"Spatial or spatiotemporal field","Numeric signal":"Numerical signal","Sequence":"Symbolic sequence"}[term]||term);
   const normalizeObject=term=>{
@@ -560,7 +561,7 @@
     if(/Robot/.test(objects))return "Robot Actions and Control";
     if(/Interactive environment/.test(objects))return "World Models and Interactive Environments";
     const modalities=item.modality;
-    if(/Text|Symbolic sequence/.test(modalities))return "Text, Code, and Symbolic Sequences";
+    if(/Text/.test(modalities))return "Text and Code";
     if(/Image|Video/.test(modalities))return "Images and Video";
     if(/Audio/.test(modalities))return "Audio and Speech";
     if(/Three-dimensional geometry/.test(modalities))return "Point Clouds and Three-Dimensional Geometry";
@@ -583,10 +584,16 @@
     item.modeling_setting=settings.join("; ")||"Not specified";
   };
   const normalizeRecord=item=>{
-    item.modality=terms(item.modality).map(normalizeModality).join("; ");
     item.data_object=terms(item.data_object).map(normalizeObject).filter(Boolean).join("; ")||"Not specified";
-    const sectionMap={"Cross-Cutting Foundations, Surveys, and Evaluation":"Foundations, Surveys, and Evaluation","Theoretical and Method Foundations for Future Tokenizers":"Foundations, Surveys, and Evaluation","Multimodal Interfaces":"Multimodal Token Systems","Molecules and Reactions":"Small Molecules and Chemical Reactions","Proteins":"Proteins and Peptides","Crystals, Materials, and Polymers":"Crystals and Polymers","Omics and Cells":"Cells, Tissues, and Clinical Cases","Physical Fields and Simulations":"Physical and Engineered Systems","World Models and Latent State Tokenization":"World Models and Interactive Environments","World Models, Simulation, and Embodied Interaction":"World Models and Interactive Environments","World Models and Embodied Interaction":"World Models and Interactive Environments","Robots and Embodied Systems":"Robot Actions and Control","Robots and Interactive Environments":"Robot Actions and Control","Time Series, Physical Fields, and World Models":"Time Series and Numerical Signals","Text and Code":"Text, Code, and Symbolic Sequences","Graphs and Tables":"Graphs, Tables, and Sets","Point Clouds, Meshes, and Three-Dimensional Geometry":"Point Clouds and Three-Dimensional Geometry"};
+    const objectTerms=terms(item.data_object);
+    const hasNaturalLanguageObject=objectTerms.some(term=>/\btext\)/i.test(term));
+    const systemName=item.title||item.model_family||"";
+    const normalizedModalities=terms(item.modality).map(normalizeModality).filter(term=>term!=="Symbolic sequence");
+    if(explicitTextSystems.has(systemName)&&!normalizedModalities.includes("Text"))normalizedModalities.push("Text");
+    item.modality=normalizedModalities.filter(term=>term!=="Text"||item.data_object==="Not specified"||hasNaturalLanguageObject||explicitTextSystems.has(systemName)).join("; ")||"Not specified";
+    const sectionMap={"Cross-Cutting Foundations, Surveys, and Evaluation":"Foundations, Surveys, and Evaluation","Theoretical and Method Foundations for Future Tokenizers":"Foundations, Surveys, and Evaluation","Multimodal Interfaces":"Multimodal Token Systems","Molecules and Reactions":"Small Molecules and Chemical Reactions","Proteins":"Proteins and Peptides","Crystals, Materials, and Polymers":"Crystals and Polymers","Omics and Cells":"Cells, Tissues, and Clinical Cases","Physical Fields and Simulations":"Physical and Engineered Systems","World Models and Latent State Tokenization":"World Models and Interactive Environments","World Models, Simulation, and Embodied Interaction":"World Models and Interactive Environments","World Models and Embodied Interaction":"World Models and Interactive Environments","Robots and Embodied Systems":"Robot Actions and Control","Robots and Interactive Environments":"Robot Actions and Control","Time Series, Physical Fields, and World Models":"Time Series and Numerical Signals","Text and Code":"Text and Code","Text, Code, and Symbolic Sequences":"Text and Code","Graphs and Tables":"Graphs, Tables, and Sets","Point Clouds, Meshes, and Three-Dimensional Geometry":"Point Clouds and Three-Dimensional Geometry"};
     item.catalog_section=sectionMap[item.catalog_section]||item.catalog_section;
+    if(item.catalog_section==="Text and Code"&&!terms(item.modality).includes("Text"))item.catalog_section=catalogSectionFor(item);
     if(/Venue Recheck|Scientific Object Coverage|Semantic Identifiers|Spectra and Microscopy|Frontier Foundation Model Reports/.test(item.catalog_section))item.catalog_section=catalogSectionFor(item);
     if(item.title==="Position: Foundation Models Need Digital Twin Representations")item.record_type="Survey or position";
     if(item.record_type==="Survey or position")item.catalog_section="Foundations, Surveys, and Evaluation";
@@ -611,7 +618,7 @@
   });
   operational=data.filter(x=>["Algorithmic","Neural","Hybrid"].includes(x.implementation_basis));
   const overviewRecords=[...data.filter(x=>x.record_type==="Tokenizer method"&&["Algorithmic","Neural","Hybrid"].includes(x.implementation_basis)&&!x.organization),...frontier.filter(x=>x.training==="Developed"&&x.encoding==="Developed"&&["Algorithmic","Neural","Hybrid"].includes(x.implementation_basis))];
-  const hfModalityCoverage=["Text","Image","Video","Audio","Graph","Symbolic sequence","Three-dimensional geometry","Spatial or spatiotemporal field","Time series","Spectrum","Table","Set","Numerical signal"];
+  const hfModalityCoverage=["Text","Image","Video","Audio","Graph","Three-dimensional geometry","Spatial or spatiotemporal field","Time series","Spectrum","Table","Set","Numerical signal"];
   const hfDataObjectCoverage=["Robot (action sequence)","Interactive environment (image)","Interactive environment (video)","Interactive environment (action sequence)","Earth surface (image sequence)","Atmosphere (spatiotemporal field)","Small molecule (string)","Small molecule (graph)","Small molecule (3D)","Small molecule (NMR spectrum)","Crystal (graph)","Crystal (3D)","DNA (sequence)","RNA (sequence)","Protein (sequence)","Protein (3D)","Peptide (sequence)","Cell (gene-expression profile)","Tissue (image)","Clinical case (image)","3D scene (geometry)"];
   const hfModelingSettingCoverage=["Cross-modal representation","Biomolecular Complexes and Multiscale Biology","Dynamic and interactive modeling"];
   const classes=["Algorithmic", "Neural", "Hybrid", "Not applicable", "Not disclosed"];
